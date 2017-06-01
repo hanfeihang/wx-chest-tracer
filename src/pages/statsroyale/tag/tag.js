@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    inputUserId: null
+    inputUserId: null,
+    historyTags: []
   },
 
   /**
@@ -24,6 +25,19 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
+
+    try {
+      var value = wx.getStorageSync('clashroyale.historyTags')
+      if (value) {
+        console.log(value)
+        that.setData({
+          historyTags: value
+        })
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+
   },
 
   /**
@@ -80,6 +94,18 @@ Page({
   },
 
   confirmUserId: function () {
+    if (this.data.inputUserId === null || this.data.inputUserId === "") {
+      wx.showModal({
+        content: "请输入合法TAG",
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            //console.log('用户点击确定')
+          }
+        }
+      });
+      return
+    }
     this.setData({
       userId: this.data.inputUserId
     })
@@ -89,6 +115,27 @@ Page({
     }
     wx.navigateBack({
       delta: 1
+    })
+  },
+
+  bindPickerChange: function (e) {
+    if (this.data.historyTags.length == 0) {
+      return
+    }
+    var index = e.detail.value
+    this.setData({
+      inputUserId: this.data.historyTags[index]
+    })
+  },
+
+  clearHistoryTags: function () {
+    var empty = new Array()
+    try {
+      wx.setStorageSync('clashroyale.historyTags', empty)
+    } catch (e) {
+    }
+    this.setData({
+      historyTags: []
     })
   }
 })

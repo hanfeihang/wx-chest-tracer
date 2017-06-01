@@ -1,5 +1,5 @@
 // statsroyale.js
-var util = require('../../utils/util.js')
+//var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -11,8 +11,8 @@ Page({
     buttonName: 'Loading',
     userId: null,
     inputUserId: null,
-    timeLastUpdate:null,
-    username:null
+    timeLastUpdate: null,
+    username: null
   },
 
   /**
@@ -22,12 +22,9 @@ Page({
     var that = this
     try {
       var value = wx.getStorageSync('clashroyale.userId')
-      if (value) {
-        console.log(value)
-        that.setData({
-          userId: value
-        })
-      }
+      that.setData({
+        userId: value
+      })
     } catch (e) {
       // Do something when catch error
     }
@@ -45,8 +42,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(1)
-    this.onLoad()
+    var that = this
+    try {
+      var value = wx.getStorageSync('clashroyale.userId')
+      if (value != this.data.userId) {
+        this.onLoad()
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+    // 
   },
 
   /**
@@ -132,10 +137,41 @@ Page({
           that.showChestTracer()
           that.showTimeLastUpdate()
           that.showUsername()
+          that.saveToHistoryTags(that.data.userId)
         }
       }
     })
   },
+
+  saveToHistoryTags: function (tag) {
+    if (tag) {
+      var that = this
+      var value = new Array()
+      try {
+        value = wx.getStorageSync('clashroyale.historyTags')
+      } catch (e) {
+        // Do something when catch error
+      }
+      if (value === "") {
+        value = new Array()
+        value.push(tag)
+      } else {
+        for (var i in value) {
+          if (value[i] === tag) {
+            return
+          }
+        }
+        value.push(tag)
+      }
+
+      try {
+        wx.setStorageSync('clashroyale.historyTags', value)
+      } catch (e) {
+        e.printStackTrace()
+      }
+    }
+  },
+
 
   showChestTracer: function () {
     var html = this.data.statsHtml
@@ -147,7 +183,7 @@ Page({
     var r;
     var chestdata = []
     while (r = reg.exec(html)) {
-      chestdata.push({ chestNum: r[1].trim(), chestType: r[2].trim() })
+      chestdata.push({ chestNum: r[1].trim(), chestType: r[2].trim().replace(' ', '') })
     }
     this.setData({ chests: chestdata })
   },
@@ -159,7 +195,7 @@ Page({
     var timeLastUpdate = r[1].trim()
     this.setData({
       timeLastUpdate: timeLastUpdate
-    })    
+    })
   },
 
   showUsername: function () {

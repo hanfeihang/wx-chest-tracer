@@ -1,12 +1,12 @@
 <!--tag.wxml-->
 <view class="page">
-  <view class="page__hd">
-    <view class="weui-cells__title">请输入Tag</view>
-  </view>
-  <view class="page__bd page__bd_spacing">
+  <!--<view class="page__hd">
+    <view class="weui-cells__title">请输入TAG</view>
+  </view>-->
+  <view class="page__bd">
 
+    <view class="weui-cells__title">请输入TAG</view>
 
-    <!--<view class="weui-cells__title">新用户Tag</view>-->
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__bd">
@@ -16,7 +16,12 @@
     </view>
     <view class="weui-btn-area">
       <button class="weui-btn" type="primary" bindtap="confirmUserId">确定</button>
+      <picker class="weui-btn" bindchange="bindPickerChange" value="0" range="{{historyTags}}">
+        <button type="default">历史记录</button>
+      </picker>
+      <button class="weui-btn" type="default" bindtap="clearHistoryTags">清空历史记录</button>
     </view>
+
 
     <!--<view class="weui-cell weui-cell_input weui-cell_vcode">
       <view class="weui-cell__hd">
