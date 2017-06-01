@@ -1,0 +1,52 @@
+<!--statsroyale.wxml-->
+<view class="page">
+  <view class="page__hd">
+
+    <view class="weui-cells__title">个人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">昵称</view>
+        <view class="weui-cell__ft">{{username}}</view>
+      </view>
+
+      <navigator url="tag/tag" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">Tag</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
+      </navigator>
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd">更新时间</view>
+        <view class="weui-cell__ft">{{timeLastUpdate}}</view>
+      </view>
+    </view>
+
+    <view>
+      <button class="weui-btn mini-btn" bindtap="refreshProfile" type="default" size="mini">刷新</button>
+      <button class="weui-btn mini-btn" bindtap="loadProfile" type="primary" size="mini">查询</button>
+    </view>
+  </view>
+
+  <view class="page__bd page__bd_spacing">
+    <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">
+      <view wx:if="{{buttonName == 'Loading'}}" class="weui-loading"></view>
+      <veiw class="weui-loadmore__tips">{{buttonName}}</veiw>
+    </view>
+
+    <view wx:if="{{buttonName == 'Ready'}}" class="weui-grids">
+      <block wx:for="{{chests}}" wx:key="chestNum" wx:for-item="item">
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/resources/{{item.chestType}}.png" />
+          <view class="weui-grid__label">{{item.chestNum}}</view>
+        </navigator>
+      </block>
+    </view>
+
+    <view class="weui-footer">
+      <view class="weui-footer__links">
+        <navigator url="info/info" class="weui-footer__link">帮助</navigator>
+      </view>
+      <view class="weui-footer__text">Copyright © 2017.05 Hansoon</view>
+    </view>
+  </view>
+
+</view>
