@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/statsroyale/statsroyale",
+    "pages/statsroyale/info/info",
+    "pages/statsroyale/tag/tag"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
