@@ -3,7 +3,7 @@
 
 This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.
 
-### How to use
+### How to use?
 
 search `ChestTracer` in Mini Program of WeChat App
 
