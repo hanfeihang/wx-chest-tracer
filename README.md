@@ -11,5 +11,5 @@ init version
 
 #### v1.0.3
 
-1.new feature: support hisotry tags
-2.fix bugs: chest pictures do not show in android phone
+1. new feature: support hisotry tags
+2. fix bugs: chest pictures do not show in android phone
