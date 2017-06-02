@@ -1,7 +1,11 @@
 # wx-chest-tracer
 ### Introduction
 
-This is a WeChat App that helps Clash Royale players know which chest is upcoming.
+This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.
+
+### How to use
+
+search `ChestTracer` in Mini Program of WeChat App
 
 ### Features
 
