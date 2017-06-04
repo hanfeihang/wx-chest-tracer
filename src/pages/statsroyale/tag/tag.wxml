@@ -21,18 +21,6 @@
       </picker>
       <button class="weui-btn" type="default" bindtap="clearHistoryTags">清空历史记录</button>
     </view>
-
-
-    <!--<view class="weui-cell weui-cell_input weui-cell_vcode">
-      <view class="weui-cell__hd">
-        <view class="weui-label">新用户Tag</view>
-      </view>
-      <view class="weui-cell__bd">
-        <input bindinput="editUserId" class="weui-input" placeholder="请输入Tag" />
-      </view>
-      <view bindtap="confirmUserId" class="weui-cell__ft">
-        <view class="weui-vcode-btn">确认</view>
-      </view>
-    </view>-->
+    
   </view>
 </view>

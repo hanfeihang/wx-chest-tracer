@@ -107,7 +107,7 @@ Page({
       return
     }
     this.setData({
-      userId: this.data.inputUserId
+      userId: this.data.inputUserId.toUpperCase()
     })
     try {
       wx.setStorageSync('clashroyale.userId', this.data.userId)

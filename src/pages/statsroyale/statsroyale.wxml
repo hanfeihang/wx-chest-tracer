@@ -1,41 +1,52 @@
 <!--statsroyale.wxml-->
 <view class="page">
-  <!--<view class="page__hd">
-    <view class="page__title">WeUI</view>
-  </view>-->
+  <view class="page__hd">
+    <view class="page__title">{{username}}</view>
+
+    <view class="page__desc">
+      <!--<view class="weui-cell__ft">Level 12</view>-->
+      <navigator url="tag/tag" class="page__desc" hover-class="weui-cell_active">
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
+      </navigator>
+      <view class="weui-cell__ft">{{timeLastUpdate}}</view>
+    </view>
+
+  </view>
 
   <view class="page__bd">
 
-    <view class="weui-cells__title">个人信息</view>
+    <!--<view class="weui-cells__title">Infomation</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
-        <view class="weui-cell__bd">昵称</view>
-        <view class="weui-cell__ft">{{username}}</view>
+        <view class="weui-cell__bd">Level</view>
+        <view class="weui-cell__ft">{{level}}</view>
       </view>
-
-      <navigator url="tag/tag" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">TAG</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
-      </navigator>
 
       <view class="weui-cell">
-        <view class="weui-cell__bd">更新时间</view>
-        <view class="weui-cell__ft">{{timeLastUpdate}}</view>
+        <view class="weui-cell__bd">Clan</view>
+        <view class="weui-cell__ft">{{clan}}</view>
       </view>
+    </view>-->
+
+    <view wx:if="{{secondsToUpdate == 0}}">
+      <button class="weui-btn" bindtap="refreshProfile" type="primary">Refresh</button>
+      <!--<view class="weui-cell__ft">{{timeLastUpdate}}</view>-->
+    </view>
+    <view wx:if="{{secondsToUpdate != 0}}">
+      <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Ready in ({{secondsToUpdate}}) seconds</button>
     </view>
 
-    <view>
-      <button class="weui-btn mini-btn" bindtap="refreshProfile" type="default" size="mini">刷新</button>
-      <button class="weui-btn mini-btn" bindtap="loadProfile" type="primary" size="mini">查询</button>
-    </view>
+    <view class="weui-cells__title">Upcoming Chests</view>
+
     <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">
       <view wx:if="{{buttonName == 'Loading'}}" class="weui-loading"></view>
       <veiw class="weui-loadmore__tips">{{buttonName}}</veiw>
     </view>
 
     <view wx:if="{{buttonName == 'Ready'}}" class="weui-grids">
+
       <block wx:for="{{chests}}" wx:key="chestNum" wx:for-item="item">
-        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+        <navigator class="weui-grid" hover-class="none">
           <image class="weui-grid__icon" src="/resources/{{item.chestType}}.png" />
           <view class="weui-grid__label">{{item.chestNum}}</view>
         </navigator>
@@ -44,7 +55,7 @@
 
     <view class="weui-footer">
       <view class="weui-footer__links">
-        <navigator url="info/info" class="weui-footer__link">帮助</navigator>
+        <navigator url="info/info" class="weui-footer__link">Instructions</navigator>
       </view>
       <view class="weui-footer__text">Copyright © 2017.05 Hansoon</view>
     </view>

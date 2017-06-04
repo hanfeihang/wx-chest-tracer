@@ -1,24 +1,36 @@
-// statsroyale.js
-//var util = require('../../utils/util.js')
+var util = require('../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    statsHtml: null,
     chests: [],
     buttonName: 'Loading',
     userId: null,
     inputUserId: null,
-    timeLastUpdate: null,
-    username: null
+    timeLastUpdate: "",
+    username: "",
+    secondsToUpdate: 0,
+    clan: "---",
+    level: "---",
+
+    statsHtml: null
+  },
+
+  clearData: function() {
+    this.setData({
+      username: "---",
+      timeLastUpdate: "---",
+      level:"---",
+      clan:"---"
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.clearData()
     var that = this
     try {
       var value = wx.getStorageSync('clashroyale.userId')
@@ -137,6 +149,8 @@ Page({
           that.showChestTracer()
           that.showTimeLastUpdate()
           that.showUsername()
+          that.showLevel()
+          that.showClan()
           that.saveToHistoryTags(that.data.userId)
         }
       }
@@ -171,7 +185,21 @@ Page({
       }
     }
   },
+  showLevel: function () {
+    var html = this.data.statsHtml
+    var reg = /<span class="statistics__userLevel">(.*?)<\/span>\n/gm;
+    var r = reg.exec(html)
+    var lvl = r[1].trim()
+    this.setData({ level: lvl })
+  },
 
+  showClan: function () {
+    var html = this.data.statsHtml
+    var reg = /<img src='\/images\/badges\/.*?png' class="statistics__smallClanBadge" \/>\n(.*?)\n/gm;
+    var r = reg.exec(html)
+    var clan = r[1].trim()
+    this.setData({ clan: clan })
+  },
 
   showChestTracer: function () {
     var html = this.data.statsHtml
@@ -218,13 +246,18 @@ Page({
         //'content-type': 'application/json'
       },
       success: function (res) {
+        var delay;
         console.log(res.data)
         if (res.data.success == true) {
           wx.showToast({
             title: res.data.message,
             icon: res.data.success,
-            duration: 2000
+            duration: 1000
           })
+          that.setData({
+            buttonName: "Loading"
+          })
+          delay = res.data.secondsToUpdate
         } else {
           wx.showModal({
             content: res.data.message,
@@ -235,9 +268,19 @@ Page({
               }
             }
           });
+          return
         }
+        var idx = delay;
+        util.schedule(delay, function () {
+          idx--;
+          that.setData({
+            secondsToUpdate: idx
+          })
+        }, function () {
+          that.loadProfile()
+          console.log("after all")
+        })
       }
     })
   }
-
 })

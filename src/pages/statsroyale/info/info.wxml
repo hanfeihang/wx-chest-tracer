@@ -20,10 +20,7 @@
                 <view class="weui-article__section">
                     <view class="weui-article__h3">1.2 刷新</view>
                     <view class="weui-article__p">
-                        用户可每隔四小时刷新宝箱数据。
-                    </view>
-                    <view class="weui-article__p">
-                        刷新一段时间后方可查询最新宝箱数据。
+                        用户每隔四小时可以刷新宝箱数据。
                     </view>
                 </view>
             </view>
