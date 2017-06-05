@@ -5,11 +5,10 @@
     </view>-->
     <view class="page__bd">
         <view class="weui-article">
-            <view class="weui-article__h1">使用帮助</view>
             <view class="weui-article__section">
                 <!--<view class="weui-article__title">帮助</view>-->
                 <view class="weui-article__section">
-                    <view class="weui-article__h3">1.1 用户TAG</view>
+                    <view class="weui-article__h3">1. 用户TAG</view>
                     <view class="weui-article__p">
                         用户TAG可在个人信息页查看，位于#号后面。
                     </view>
@@ -18,7 +17,7 @@
                     </view>
                 </view>
                 <view class="weui-article__section">
-                    <view class="weui-article__h3">1.2 刷新</view>
+                    <view class="weui-article__h3">2. 刷新</view>
                     <view class="weui-article__p">
                         用户每隔四小时可以刷新宝箱数据。
                     </view>
