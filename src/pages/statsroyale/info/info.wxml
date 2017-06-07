@@ -27,7 +27,7 @@
           </view>
 
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">3. 软件更新</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">4. 软件更新</view>
             <view class="weui-media-box__desc">如果小程序更新后无法使用，建议删除小程序后，重新搜索ChestTracer使用。</view>
           </view>
 
