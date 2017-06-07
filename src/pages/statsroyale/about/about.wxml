@@ -10,14 +10,14 @@
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.0</view>
-          <view class="weui-media-box__desc display-inline-half">2017.06</view>
+          <view class="weui-media-box__desc display-inline-half">2017.06.07</view>
           <view class="weui-media-box__desc">1.make refresh profile and show profile on one click</view>
           <view class="weui-media-box__desc">2.optimize page display</view>
           <view class="weui-media-box__desc">3.add ‘about’ page</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.3</view>
-          <view class="weui-media-box__desc display-inline-half">2017.05</view>
+          <view class="weui-media-box__desc display-inline-half">2017.06.01</view>
           <view class="weui-media-box__desc">1.support history tags</view>
           <view class="weui-media-box__desc">2.fix bugs: chest pictures did not show in android phone</view>
         </view>
