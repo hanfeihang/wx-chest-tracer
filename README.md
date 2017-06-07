@@ -21,7 +21,7 @@ search `ChestTracer` in Mini Program of WeChat App
 - optimize page display
 - add 'about' page
 
-#### v1.0.3 (2017.05)
+#### v1.0.3 (2017.06.01)
 
 - new feature: support history tags
 - fix bugs: chest pictures do not show in android phone
