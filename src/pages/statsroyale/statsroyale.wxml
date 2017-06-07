@@ -54,7 +54,8 @@
 
     <view class="weui-footer">
       <view class="weui-footer__links">
-        <navigator url="info/info" class="weui-footer__link">使用说明</navigator>
+        <navigator url="info/info" class="weui-footer__link">帮助</navigator>
+        <navigator url="about/about" class="weui-footer__link">关于</navigator>
       </view>
       <view class="weui-footer__text">Copyright © 2017.05 Hansoon</view>
     </view>

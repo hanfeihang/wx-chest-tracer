@@ -1,0 +1,9 @@
+/* about.wxss */
+.display-inline-half {
+  display: inline-flex;
+  width: 50%;
+}
+
+.text-right {
+  text-align: right
+}

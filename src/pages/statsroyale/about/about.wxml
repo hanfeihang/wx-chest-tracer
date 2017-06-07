@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">Chest Tracer</view>
+    <view class="page__desc">This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.</view>
+    <view class="page__desc text-right">Author Hansoon</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">版本记录</view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.0</view>
+          <view class="weui-media-box__desc display-inline-half">2017.06</view>
+          <view class="weui-media-box__desc">1.make refresh profile and show profile on one click</view>
+          <view class="weui-media-box__desc">2.optimize page display</view>
+          <view class="weui-media-box__desc">3.add ‘about’ page</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.3</view>
+          <view class="weui-media-box__desc display-inline-half">2017.05</view>
+          <view class="weui-media-box__desc">1.support history tags</view>
+          <view class="weui-media-box__desc">2.fix bugs: chest pictures did not show in android phone</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.0</view>
+          <view class="weui-media-box__desc display-inline-half">2017.05</view>
+          <view class="weui-media-box__desc">1.init version</view>
+        </view>
+      </view>
+      <!--<view class="weui-panel__ft">
+        <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>-->
+    </view>
+
+  </view>
+</view>

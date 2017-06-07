@@ -5,7 +5,7 @@
   </view>-->
   <view class="page__bd">
 
-    <view class="weui-cells__title">Input TAG here</view>
+    <view class="weui-cells__title">请输入TAG</view>
 
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">

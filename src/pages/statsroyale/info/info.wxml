@@ -1,28 +1,41 @@
 <view class="page">
-    <!--<view class="page__hd">
-        <view class="page__title">帮助</view>
-        <view class="page__desc">2017.5</view>
-    </view>-->
+  <view class="page__hd">
+    <view class="page__title">帮助</view>
+    <!--<view class="page__desc">2017.5</view>-->
+  </view>
+  <view class="page__bd">
+
     <view class="page__bd">
-        <view class="weui-article">
-            <view class="weui-article__section">
-                <!--<view class="weui-article__title">帮助</view>-->
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">1. 用户TAG</view>
-                    <view class="weui-article__p">
-                        用户TAG可在个人信息页查看，位于#号后面。
-                    </view>
-                    <view class="weui-article__p">
-                        TAG通常为数字和大写字母组合，不包含#号。
-                    </view>
-                </view>
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">2. 刷新</view>
-                    <view class="weui-article__p">
-                        用户每隔四小时可以刷新宝箱数据。
-                    </view>
-                </view>
-            </view>
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">帮助</view>
+
+        <view class="weui-panel__bd">
+
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">1. 如何使用</view>
+            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。如果提示invalid user，请确认TAG是否正确。</view>
+          </view>
+
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">2. 用户TAG</view>
+            <view class="weui-media-box__desc">用户TAG可在个人信息页查看，位于昵称下面，#号后面。TAG通常为数字和大写字母组合，不包含#号。</view>
+          </view>
+
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">3. 刷新</view>
+            <view class="weui-media-box__desc">用户每隔四小时可以刷新宝箱数据。</view>
+          </view>
+
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">3. 软件更新</view>
+            <view class="weui-media-box__desc">如果小程序更新后无法使用，建议删除小程序后，重新搜索ChestTracer使用。</view>
+          </view>
+
         </view>
+
+      </view>
     </view>
+
+
+  </view>
 </view>
