@@ -15,6 +15,12 @@ search `ChestTracer` in Mini Program of WeChat App
 
 ### Update History
 
+#### v1.1.1 (doing)
+
+- some bugs fixed
+- auto choose the tag you are using in history tag list
+- refresh on pull down
+
 #### v1.1.0 (2017.06.07)
 
 - enhance user experience: make refresh profile and show profile on one click
@@ -26,7 +32,7 @@ search `ChestTracer` in Mini Program of WeChat App
 - new feature: support history tags
 - fix bugs: chest pictures do not show in android phone
 
-#### v1.0.0 (2017.05)
+#### v1.0.0 (2017.05.22)
 
 - init version
 
