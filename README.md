@@ -18,6 +18,7 @@ search `ChestTracer` in Mini Program of WeChat App
 #### v1.1.1 (doing)
 
 - some bugs fixed
+- auto choose the tag you are using in history tag list
 
 #### v1.1.0 (2017.06.07)
 
