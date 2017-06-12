@@ -13,12 +13,13 @@
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">1. 如何使用</view>
-            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。如果提示invalid user，请确认TAG是否正确。</view>
+            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。如果提示Invalid User，请确认TAG是否正确。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">2. 用户TAG</view>
             <view class="weui-media-box__desc">用户TAG可在个人信息页查看，位于昵称下面，#号后面。TAG通常为数字和大写字母组合，不包含#号。</view>
+            <view class="weui-media-box__desc">小写输入自动转大写。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
@@ -27,8 +28,14 @@
           </view>
 
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">4. 软件更新</view>
-            <view class="weui-media-box__desc">如果小程序更新后无法使用，建议删除小程序后，重新搜索ChestTracer使用。</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">4. 数据来源</view>
+            <view class="weui-media-box__desc">数据来源于statsroyale.com。</view>
+          </view>
+
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text">5. 碰到问题</view>
+            <view class="weui-media-box__desc">请确保TAG输入正确，且手机能正常statsroyale.com网站。</view>
+            <view class="weui-media-box__desc">如提示Server Error，属于网站异常，请稍后再试。</view>
           </view>
 
         </view>

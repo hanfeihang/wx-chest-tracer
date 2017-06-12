@@ -6,8 +6,15 @@
   </view>
   <view class="page__bd">
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">版本记录</view>
+      <view class="weui-panel__hd">Version History</view>
       <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.1</view>
+          <view class="weui-media-box__desc display-inline-half">2017.06.12</view>
+          <view class="weui-media-box__desc">1.some bugs fixed</view>
+          <view class="weui-media-box__desc">2.auto choose the tag you are using in history tag list</view>
+          <view class="weui-media-box__desc">3.refresh on pull down</view>
+        </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.0</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.07</view>
@@ -23,13 +30,13 @@
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.0</view>
-          <view class="weui-media-box__desc display-inline-half">2017.05</view>
+          <view class="weui-media-box__desc display-inline-half">2017.05.22</view>
           <view class="weui-media-box__desc">1.init version</view>
         </view>
       </view>
       <!--<view class="weui-panel__ft">
         <view class="weui-cell weui-cell_access weui-cell_link">
-          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__bd">More</view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>
       </view>-->

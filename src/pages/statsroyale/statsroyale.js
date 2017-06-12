@@ -6,23 +6,22 @@ Page({
   data: {
     chests: [],
     buttonName: 'Loading',
-    userId: null,
-    inputUserId: null,
+    userId: "",
     timeLastUpdate: "",
     username: "",
     secondsToUpdate: 0,
-    clan: "---",
-    level: "---",
-
+    clan: "",
+    level: "",
     statsHtml: null
   },
 
-  clearData: function() {
+  clearData: function () {
     this.setData({
-      username: "---",
-      timeLastUpdate: "---",
-      level:"---",
-      clan:"---"
+      username: "",
+      userId: "",
+      timeLastUpdate: "",
+      level: "",
+      clan: ""
     })
   },
 
@@ -33,7 +32,8 @@ Page({
     this.clearData()
     var that = this
     try {
-      var value = wx.getStorageSync('clashroyale.userId')
+      var value = wx.getStorageSync('clashroyale.userId');
+      console.log("onLoad:" + value)
       that.setData({
         userId: value
       })
@@ -57,6 +57,7 @@ Page({
     var that = this
     try {
       var value = wx.getStorageSync('clashroyale.userId')
+      console.log("onShow:" + value)
       if (value != this.data.userId) {
         this.onLoad()
       }
@@ -112,14 +113,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log("onPullDownRefresh");
+    this.loadProfile();
+    wx.stopPullDownRefresh();
   },
 
   loadProfile: function () {
-    if (this.data.userId == null) {
+    if (this.data.userId == null || this.data.userId.trim() == "") {
       this.setData({
-        buttonName: "please input userId"
+        buttonName: "Invalid UserId"
       })
+      return;
     }
 
     this.setData({
@@ -152,6 +156,21 @@ Page({
           that.showLevel()
           that.showClan()
           that.saveToHistoryTags(that.data.userId)
+        }
+      },
+      fail: function (res) {
+        console.log(res);
+        that.setData({
+          buttonName: 'Connection Error'
+        })
+      },
+      complete: function (res) {
+        // success -> complete
+        console.log("complete");
+        if (res.statusCode > 300) {
+          that.setData({
+            buttonName: 'Server Error'
+          })
         }
       }
     })
@@ -237,6 +256,9 @@ Page({
   },
 
   refreshProfile: function () {
+    this.setData({
+      secondsToUpdate: -9
+    })
     var that = this
     wx.request({
       url: 'https://statsroyale.com/profile/' + this.data.userId + '/refresh',
@@ -247,7 +269,6 @@ Page({
       },
       success: function (res) {
         var delay;
-        console.log(res.data)
         if (res.data.success == true) {
           wx.showToast({
             title: res.data.message,
@@ -258,7 +279,7 @@ Page({
             buttonName: "Loading"
           })
           delay = res.data.secondsToUpdate
-        } else {
+        } else if (res.data.success == false) {
           wx.showModal({
             content: res.data.message,
             showCancel: false,
@@ -266,12 +287,20 @@ Page({
               if (res.confirm) {
                 //console.log('用户点击确定')
               }
+              that.setData({
+                secondsToUpdate: 0
+              })
             }
           });
           return
+        } else {
+          return
         }
         var idx = delay;
-        util.schedule(delay, function () {
+        if (idx >= 15) {
+          idx = 15;
+        }
+        util.schedule(idx, function () {
           idx--;
           that.setData({
             secondsToUpdate: idx
@@ -280,6 +309,41 @@ Page({
           that.loadProfile()
           console.log("after all")
         })
+      },
+      fail: function (res) {
+        console.log(res);
+        wx.showModal({
+          content: "Connection Error",
+          showCancel: false,
+          success: function (res) {
+            if (res.confirm) {
+              //console.log('用户点击确定')
+            }
+            that.setData({
+              secondsToUpdate: 0
+            })
+          }
+        });
+        return
+      },
+      complete: function (res) {
+        // success -> complete
+        console.log('refreshProfile complete')
+        if (res.statusCode > 300) {
+          wx.showModal({
+            content: "Server Error",
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                //console.log('用户点击确定')
+              }
+              that.setData({
+                secondsToUpdate: 0
+              })
+            }
+          });
+        }
+        console.log('refreshProfile test')
       }
     })
   }

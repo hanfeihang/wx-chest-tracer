@@ -16,7 +16,7 @@
     </view>
     <view class="weui-btn-area">
       <button class="weui-btn" type="primary" bindtap="confirmUserId">确认</button>
-      <picker class="weui-btn" bindchange="bindPickerChange" value="0" range="{{historyTags}}">
+      <picker class="weui-btn" bindchange="bindPickerChange" value="{{tagIndex}}" range="{{historyTags}}">
         <button type="default">历史纪录</button>
       </picker>
       <button class="weui-btn" type="default" bindtap="clearHistoryTags">清空历史纪录</button>

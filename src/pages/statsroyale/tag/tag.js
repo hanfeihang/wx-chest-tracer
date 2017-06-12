@@ -6,19 +6,20 @@ Page({
    */
   data: {
     inputUserId: null,
-    historyTags: []
+    historyTags: [],
+    tagIndex: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
+
     try {
       var value = wx.getStorageSync('clashroyale.userId')
       if (value) {
         console.log(value)
-        that.setData({
+        this.setData({
           inputUserId: value
         })
       }
@@ -30,9 +31,24 @@ Page({
       var value = wx.getStorageSync('clashroyale.historyTags')
       if (value) {
         console.log(value)
-        that.setData({
+        this.setData({
           historyTags: value
         })
+        for (var i = 0; i < value.length; i++) {
+          if (value[i] == this.data.inputUserId) {
+            this.setData({
+              tagIndex: i
+            })
+          }
+        }
+        for (tag in value) {
+          if (tag == this.data.inputUserId) {
+            this.setData({
+              tagIndex: value
+            })
+          }
+        }
+
       }
     } catch (e) {
       // Do something when catch error
@@ -94,7 +110,7 @@ Page({
   },
 
   confirmUserId: function () {
-    if (this.data.inputUserId === null || this.data.inputUserId === "") {
+    if (this.data.inputUserId === null || this.data.inputUserId.trim() == "") {
       wx.showModal({
         content: "请输入合法TAG",
         showCancel: false,
@@ -134,8 +150,13 @@ Page({
       wx.setStorageSync('clashroyale.historyTags', empty)
     } catch (e) {
     }
+    try {
+      wx.setStorageSync('clashroyale.userId', "")
+    } catch (e) {
+    }
     this.setData({
-      historyTags: []
+      historyTags: [],
+      inputUserId: ""
     })
   }
 })
