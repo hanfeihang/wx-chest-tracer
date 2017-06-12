@@ -15,6 +15,10 @@ search `ChestTracer` in Mini Program of WeChat App
 
 ### Update History
 
+#### v1.1.1 (doing)
+
+- some bugs fixed
+
 #### v1.1.0 (2017.06.07)
 
 - enhance user experience: make refresh profile and show profile on one click
