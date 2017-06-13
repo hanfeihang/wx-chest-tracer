@@ -297,8 +297,8 @@ Page({
           return
         }
         var idx = delay;
-        if (idx >= 15) {
-          idx = 15;
+        if (idx >= 5) {
+          idx = 5;
         }
         util.schedule(idx, function () {
           idx--;
