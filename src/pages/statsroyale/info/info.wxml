@@ -1,7 +1,6 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">帮助</view>
-    <!--<view class="page__desc">2017.5</view>-->
   </view>
   <view class="page__bd">
 
@@ -17,30 +16,22 @@
           </view>
 
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">2. 用户TAG</view>
-            <view class="weui-media-box__desc">用户TAG可在个人信息页查看，位于昵称下面，#号后面，通常为数字和大写字母组合，不包含#号。小写输入自动转大写。</view>
-          </view>
-
-          <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">3. 刷新</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">2. 刷新</view>
             <view class="weui-media-box__desc">用户每隔四小时可以刷新宝箱数据。刷新请求会排队执行。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">4. 数据来源</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">3. 数据来源</view>
             <view class="weui-media-box__desc">数据来源于statsroyale.com。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">5. 碰到问题</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">4. 碰到问题</view>
             <view class="weui-media-box__desc">如果statsroyale.com网站异常，会提示Server Error，请稍后再试。</view>
           </view>
 
         </view>
-
       </view>
     </view>
-
-
   </view>
 </view>

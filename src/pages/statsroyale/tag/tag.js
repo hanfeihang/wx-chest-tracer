@@ -7,7 +7,8 @@ Page({
   data: {
     inputUserId: null,
     historyTags: [],
-    tagIndex: 0
+    tagIndex: 0,
+    showTagGuide: false
   },
 
   /**
@@ -110,7 +111,8 @@ Page({
   },
 
   confirmUserId: function () {
-    if (this.data.inputUserId === null || this.data.inputUserId.trim() == "") {
+    var userId = this.data.inputUserId;
+    if (userId === null || userId.trim() == "") {
       wx.showModal({
         content: "请输入合法TAG",
         showCancel: false,
@@ -122,8 +124,13 @@ Page({
       });
       return
     }
+    //delete # in the start
+    var firstChar = userId.substr(0, 1);
+    if (firstChar == "#"){
+      userId = userId.substr(1);
+    }
     this.setData({
-      userId: this.data.inputUserId.toUpperCase()
+      userId: userId.toUpperCase()
     })
     try {
       wx.setStorageSync('clashroyale.userId', this.data.userId)
@@ -157,6 +164,13 @@ Page({
     this.setData({
       historyTags: [],
       inputUserId: ""
+    })
+  },
+
+  showTagGuide: function () {
+    var bol = this.data.showTagGuide;
+    this.setData({
+      showTagGuide: !bol
     })
   }
 })
