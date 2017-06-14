@@ -15,6 +15,11 @@ search `ChestTracer` in Mini Program of WeChat App
 
 ### Update History
 
+#### v1.1.2 (2017.06.14)
+
+- add tag tips
+- support tag include # symbol
+
 #### v1.1.1 (2017.06.12)
 
 - some bugs fixed
@@ -29,8 +34,8 @@ search `ChestTracer` in Mini Program of WeChat App
 
 #### v1.0.3 (2017.06.01)
 
-- new feature: support history tags
-- fix bugs: chest pictures do not show in android phone
+- support history tags
+- fix bug: chest pictures do not show in android phone
 
 #### v1.0.0 (2017.05.22)
 
