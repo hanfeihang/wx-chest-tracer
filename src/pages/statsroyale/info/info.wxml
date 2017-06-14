@@ -13,18 +13,17 @@
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">1. 如何使用</view>
-            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。如果提示Invalid User，请确认TAG是否正确。</view>
+            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。下拉页面可查询最新宝箱数据。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">2. 用户TAG</view>
-            <view class="weui-media-box__desc">用户TAG可在个人信息页查看，位于昵称下面，#号后面。TAG通常为数字和大写字母组合，不包含#号。</view>
-            <view class="weui-media-box__desc">小写输入自动转大写。</view>
+            <view class="weui-media-box__desc">用户TAG可在个人信息页查看，位于昵称下面，#号后面，通常为数字和大写字母组合，不包含#号。小写输入自动转大写。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">3. 刷新</view>
-            <view class="weui-media-box__desc">用户每隔四小时可以刷新宝箱数据。</view>
+            <view class="weui-media-box__desc">用户每隔四小时可以刷新宝箱数据。刷新请求会排队执行。</view>
           </view>
 
           <view class="weui-media-box weui-media-box_text">
@@ -34,8 +33,7 @@
 
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">5. 碰到问题</view>
-            <view class="weui-media-box__desc">请确保TAG输入正确，且手机能正常statsroyale.com网站。</view>
-            <view class="weui-media-box__desc">如提示Server Error，属于网站异常，请稍后再试。</view>
+            <view class="weui-media-box__desc">如果statsroyale.com网站异常，会提示Server Error，请稍后再试。</view>
           </view>
 
         </view>
