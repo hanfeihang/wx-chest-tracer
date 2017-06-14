@@ -5,7 +5,7 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__bd">
-          <input bindinput="editUserId" class="weui-input" placeholder="{{inputUserId}}" />
+          <input confirm-type="done" maxlength="12" bindinput="editUserId" class="weui-input" placeholder="{{inputUserId}}" />
         </view>
       </view>
     </view>
@@ -15,7 +15,7 @@
         <button type="default">历史纪录</button>
       </picker>
       <button class="weui-btn" type="warn" bindtap="clearHistoryTags">清空历史纪录</button>
-      <button bindtap="showTagGuide" class="weui-btn mini-btn" type="default" size="mini">Tag在哪</button>
+      <button bindtap="showTagGuide" class="weui-btn mini-btn" type="default" size="mini">TAG在哪</button>
     </view>
 
     <view wx:if="{{showTagGuide}}" class="weui-footer__links">
