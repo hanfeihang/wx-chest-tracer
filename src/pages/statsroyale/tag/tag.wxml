@@ -14,7 +14,7 @@
       <picker class="weui-btn" bindchange="bindPickerChange" value="{{tagIndex}}" range="{{historyTags}}">
         <button type="default">历史纪录</button>
       </picker>
-      <button class="weui-btn" type="warn" bindtap="clearHistoryTags">清空历史纪录</button>
+      <button class="weui-btn" type="warn" bindtap="clearHistoryTagsConfirm">清空历史纪录</button>
       <button bindtap="showTagGuide" class="weui-btn mini-btn" type="default" size="mini">TAG在哪</button>
     </view>
 

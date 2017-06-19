@@ -151,6 +151,21 @@ Page({
     })
   },
 
+  clearHistoryTagsConfirm: function () {
+    var that = this;
+    wx.showModal({
+      title: '确认清空？',
+      confirmText: '清空',
+      // content: '这是一个模态弹窗',
+      success: function (res) {
+        if (res.confirm) {
+          that.clearHistoryTags()
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
+
   clearHistoryTags: function () {
     var empty = new Array()
     try {
