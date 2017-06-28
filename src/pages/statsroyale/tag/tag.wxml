@@ -19,7 +19,10 @@
     </view>
 
     <view wx:if="{{showTagGuide}}" class="weui-footer__links">
-      <image mode="aspectFit" src="/resources/tag-guide.jpg"></image>
+      <view class="weui-media-box__desc text-center">请注意TAG只会包含数字0，不会包含字母o</view>
+      <view class="text-center">
+        <image class="text-center" mode="aspectFit" src="/resources/tag-guide.jpg"></image>
+      </view>
     </view>
   </view>
 </view>

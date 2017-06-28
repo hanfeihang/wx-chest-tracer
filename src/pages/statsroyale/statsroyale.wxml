@@ -11,11 +11,9 @@
       </navigator>
       <view class="weui-cell__ft" style="height:22px">{{timeLastUpdate}}</view>
     </view>
-
   </view>
 
   <view class="page__bd">
-
     <!--<view class="weui-cells__title">Infomation</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
