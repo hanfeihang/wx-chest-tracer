@@ -15,6 +15,10 @@ search `ChestTracer` in Mini Program of WeChat App
 
 ### Update History
 
+#### v1.1.3 (2017.06.28)
+
+- optimize tips
+
 #### v1.1.2 (2017.06.19)
 
 - add tag tips
