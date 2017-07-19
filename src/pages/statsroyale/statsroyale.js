@@ -5,6 +5,7 @@ Page({
    */
   data: {
     chests: [],
+    upcomingShopOffers: [],
     buttonName: 'Loading',
     userId: "",
     timeLastUpdate: "",
@@ -85,7 +86,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('onPullDownRefresh')
+
   },
 
   /**
@@ -140,22 +141,30 @@ Page({
       },
       success: function (res) {
         var html = res.data
-        var x = html.indexOf("chests__queue")
-        if (x == -1) {
+        var x = html.indexOf("Profile is currently missing")
+        if (x > 0) {
           that.setData({
-            buttonName: 'Invalid UserId'
+            buttonName: '档案缺失，请刷新'
+          })
+          return;
+        }
+        x = html.indexOf("Invalid Hashtag Provided")
+        if (x > 0) {
+          that.setData({
+            buttonName: 'TAG含有非法字符'
           })
         } else {
           that.setData({
             statsHtml: html,
             buttonName: 'Ready'
           })
-          that.showChestTracer()
-          that.showTimeLastUpdate()
-          that.showUsername()
-          that.showLevel()
-          that.showClan()
-          that.saveToHistoryTags(that.data.userId)
+          that.showUpcomingChests();
+          that.showUpcomingShopOffers();
+          that.showTimeLastUpdate();
+          that.showUsername();
+          that.showLevel();
+          that.showClan();
+          that.saveToHistoryTags(that.data.userId);
         }
       },
       fail: function (res) {
@@ -204,23 +213,8 @@ Page({
       }
     }
   },
-  showLevel: function () {
-    var html = this.data.statsHtml
-    var reg = /<span class="statistics__userLevel">(.*?)<\/span>\n/gm;
-    var r = reg.exec(html)
-    var lvl = r[1].trim()
-    this.setData({ level: lvl })
-  },
 
-  showClan: function () {
-    var html = this.data.statsHtml
-    var reg = /<img src='\/images\/badges\/.*?png' class="statistics__smallClanBadge" \/>\n(.*?)\n/gm;
-    var r = reg.exec(html)
-    var clan = r[1].trim()
-    this.setData({ clan: clan })
-  },
-
-  showChestTracer: function () {
+  showUpcomingChests: function () {
     var html = this.data.statsHtml
     var x = html.indexOf("chests__queue")
     var y = html.indexOf("profile__replays")
@@ -233,6 +227,25 @@ Page({
       chestdata.push({ chestNum: r[1].trim(), chestType: r[2].trim().replace(' ', '') })
     }
     this.setData({ chests: chestdata })
+  },
+
+  showUpcomingShopOffers: function () {
+    var html = this.data.statsHtml
+    var x = html.indexOf("offers__queue")
+    var y = html.indexOf("profile__replays")
+    html = html.substring(x, y)
+
+    var reg = /<div class="offers__name">(.*?)<\/div>\n.*?<div>(.*?)<\/div>/gm;
+    var r;
+    var shopOffers = []
+    while (r = reg.exec(html)) {
+      shopOffers.push({
+        offerName: r[1].trim(),
+        offerPngName: r[1].trim().toLowerCase().replace(' ', '-') + '-offer',
+        offerTime: r[2].trim()
+      })
+    }
+    this.setData({ upcomingShopOffers: shopOffers })
   },
 
   showTimeLastUpdate: function () {
@@ -253,6 +266,22 @@ Page({
     this.setData({
       username: username
     })
+  },
+
+  showLevel: function () {
+    var html = this.data.statsHtml
+    var reg = /<span class="statistics__userLevel">(.*?)<\/span>\n/gm;
+    var r = reg.exec(html)
+    var lvl = r[1].trim()
+    this.setData({ level: lvl })
+  },
+
+  showClan: function () {
+    var html = this.data.statsHtml
+    var reg = /<img src='\/images\/badges\/.*?png' class="statistics__smallClanBadge" \/>\n(.*?)\n/gm;
+    var r = reg.exec(html)
+    var clan = r[1].trim()
+    this.setData({ clan: clan })
   },
 
   refreshProfile: function () {

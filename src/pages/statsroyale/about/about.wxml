@@ -8,7 +8,13 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">Version History</view>
       <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.0</view>
+          <view class="weui-media-box__desc display-inline-half">2017.07.19</view>
+          <view class="weui-media-box__desc">1.new feature - upcoming shop offers</view>
+          <view class="weui-media-box__desc">2.optimize tips for new users</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.3</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.28</view>
           <view class="weui-media-box__desc">1.optimize tips</view>

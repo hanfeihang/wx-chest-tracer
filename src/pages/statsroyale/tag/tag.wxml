@@ -19,7 +19,9 @@
     </view>
 
     <view wx:if="{{showTagGuide}}" class="weui-footer__links">
-      <view class="weui-media-box__desc text-center">请注意TAG只会包含数字0，不会包含字母O</view>
+      <view class="weui-media-box__desc text-center">请注意TAG只会包含以下字符:</view>
+      <view class="weui-media-box__desc text-center">数字0, 2, 8, 9</view>
+      <view class="weui-media-box__desc text-center">字母P,Y,L,Q,G,R,J,C,U,V</view>
       <view class="text-center">
         <image class="text-center" mode="aspectFit" src="/resources/tag-guide.jpg"></image>
       </view>
