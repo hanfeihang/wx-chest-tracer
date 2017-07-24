@@ -61,7 +61,7 @@
         <view class="weui-panel weui-panel_access">
           <view class="weui-panel__bd">
             <block wx:for="{{upcomingShopOffers}}" wx:key="offerName" wx:for-item="item">
-              <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <navigator class="weui-media-box weui-media-box_appmsg" hover-class="none">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                   <image class="weui-media-box__thumb" src="/resources/offers/{{item.offerPngName}}.png" />
                 </view>
