@@ -34,7 +34,6 @@ Page({
     var that = this
     try {
       var value = wx.getStorageSync('clashroyale.userId');
-      console.log("onLoad:" + value)
       that.setData({
         userId: value
       })
@@ -58,7 +57,6 @@ Page({
     var that = this
     try {
       var value = wx.getStorageSync('clashroyale.userId')
-      console.log("onShow:" + value)
       if (value != this.data.userId) {
         this.onLoad()
       }
@@ -162,8 +160,8 @@ Page({
           that.showUpcomingShopOffers();
           that.showTimeLastUpdate();
           that.showUsername();
-          that.showLevel();
-          that.showClan();
+          // that.showLevel();
+          // that.showClan();
           that.saveToHistoryTags(that.data.userId);
         }
       },
@@ -175,7 +173,6 @@ Page({
       },
       complete: function (res) {
         // success -> complete
-        console.log("complete");
         if (res.statusCode > 300) {
           that.setData({
             buttonName: 'Server Error'
@@ -215,25 +212,25 @@ Page({
   },
 
   showUpcomingChests: function () {
-    var html = this.data.statsHtml
-    var x = html.indexOf("chests__queue")
-    var y = html.indexOf("profile__replays")
-    html = html.substring(x, y)
-
+    var html = this.data.statsHtml;
     var reg = /<span class="chests__counter">(.*?)<\/span>\n.*?chests__tooltip">\n(.*?)\n/gm;
     var r;
-    var chestdata = []
+    var chestdata = [];
+
     while (r = reg.exec(html)) {
-      chestdata.push({ chestNum: r[1].trim(), chestType: r[2].trim().replace(' ', '') })
+      var chestNum = r[1].trim();
+      if(r[2].trim().split(':').length == 2){
+        var chestType = r[2].split(':')[1].trim();
+      }else {
+        var chestType = r[2].trim();
+      }
+      chestdata.push({ chestNum: chestNum, chestType: chestType.replace(' ', '') })
     }
     this.setData({ chests: chestdata })
   },
 
   showUpcomingShopOffers: function () {
     var html = this.data.statsHtml
-    var x = html.indexOf("offers__queue")
-    var y = html.indexOf("profile__replays")
-    html = html.substring(x, y)
 
     var reg = /<div class="offers__name">(.*?)<\/div>\n.*?<div>(.*?)<\/div>/gm;
     var r;
@@ -250,7 +247,7 @@ Page({
 
   showTimeLastUpdate: function () {
     var html = this.data.statsHtml
-    var reg = /<div class="statistics__tip ui__smallText ui__greyText">\n(.*?)<\/div>\n/gm;
+    var reg = /<div class="refresh__time">\n(.*?)<\/div>\n/gm;
     var r = reg.exec(html)
     var timeLastUpdate = r[1].trim()
     this.setData({
@@ -259,13 +256,17 @@ Page({
   },
 
   showUsername: function () {
-    var html = this.data.statsHtml
-    var reg = /<div class="ui__headerMedium statistics__userName">\n(.*?)<span/gm;
-    var r = reg.exec(html)
-    var username = r[1].trim()
-    this.setData({
-      username: username
-    })
+    try{
+      var html = this.data.statsHtml
+      var reg = /<div class="ui__headerMedium profileHeader__name">\n(.*?)<span/gm;
+      var r = reg.exec(html)
+      var username = r[1].trim()
+      this.setData({
+        username: username
+      })
+    } catch (err) {
+
+    }
   },
 
   showLevel: function () {

@@ -15,9 +15,13 @@ search `ChestTracer` in Mini Program of WeChat App
 - show upcoming chests.
 - show upcoming shop offers.
 - record history tags.
-- no adds and less mobile phone traffic.
+- no installation, no adds and less mobile phone traffic.
 
 ### Update History
+
+#### v1.2.1 (2017.08.12)
+
+- statsroyale page changed, fix it
 
 #### v1.2.0 (2017.07.19)
 
