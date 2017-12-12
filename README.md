@@ -19,6 +19,10 @@ search `ChestTracer` in Mini Program of WeChat App
 
 ### Update History
 
+#### v1.2.2 (2017.12.12)
+
+- statsroyale page changed, fix it
+
 #### v1.2.1 (2017.08.12)
 
 - statsroyale page changed, fix it

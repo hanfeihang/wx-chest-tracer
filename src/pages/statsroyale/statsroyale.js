@@ -224,7 +224,7 @@ Page({
       }else {
         var chestType = r[2].trim();
       }
-      chestdata.push({ chestNum: chestNum, chestType: chestType.replace(' ', '') })
+      chestdata.push({ chestNum: chestNum, chestType: chestType.replace(new RegExp(/ /g), '') })
     }
     this.setData({ chests: chestdata })
   },
