@@ -34,7 +34,7 @@
         <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Ready in ({{secondsToUpdate}}) seconds</button>
       </view>
       <view wx:if="{{secondsToUpdate < 0}}">
-        <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Refresh</button>
+        <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Update</button>
       </view>
     </view>
 
