@@ -120,7 +120,7 @@ Page({
   loadProfile: function () {
     if (this.data.userId == null || this.data.userId.trim() == "") {
       this.setData({
-        buttonName: "Invalid UserId"
+        buttonName: "请输入UserTag"
       })
       return;
     }
