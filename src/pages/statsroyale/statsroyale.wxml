@@ -28,7 +28,7 @@
     </view>-->
     <view class="page__bd_spacing">
       <view wx:if="{{secondsToUpdate == 0}}">
-        <button class="weui-btn" bindtap="refreshProfile" type="primary">Refresh</button>
+        <button class="weui-btn" bindtap="refreshProfile" type="primary">Update</button>
       </view>
       <view wx:if="{{secondsToUpdate > 0}}">
         <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Ready in ({{secondsToUpdate}}) seconds</button>

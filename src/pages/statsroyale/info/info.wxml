@@ -13,7 +13,7 @@
           </view>
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">2. 刷新</view>
-            <view class="weui-media-box__desc">用户每隔四小时可以刷新宝箱数据。刷新请求会排队执行。</view>
+            <view class="weui-media-box__desc">用户每隔1小时可以更新宝箱数据。更新请求会排队执行。</view>
           </view>
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">3. 数据来源</view>
@@ -23,13 +23,13 @@
             <view class="weui-media-box__title weui-media-box__title_in-text">4. 碰到问题</view>
             <view class="weui-media-box__desc">请确保手机可以正常访问https://statsroyale.com。如果网站异常，会提示Server Error，请稍后再试。</view>
           </view>
-          <view class="weui-media-box weui-media-box_text">
+          <!-- <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">5. Upcoming Shop Offers是什么</view>
             <view class="weui-media-box__desc">游戏内的商店几天后会卖该类型的宝箱or特惠。</view>
-          </view>
+          </view> -->
           <view class="weui-media-box weui-media-box_text">
-            <view class="weui-media-box__title weui-media-box__title_in-text">6. 档案缺失</view>
-            <view class="weui-media-box__desc">如果多次刷新后还一直提示档案缺失，请确认TAG是否正确。</view>
+            <view class="weui-media-box__title weui-media-box__title_in-text">5. 档案缺失</view>
+            <view class="weui-media-box__desc">如果多次更新后还一直提示档案缺失，请确认TAG是否正确。</view>
           </view>
         </view>
       </view>
