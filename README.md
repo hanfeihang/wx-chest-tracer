@@ -1,21 +1,21 @@
 # wx-chest-tracer
 
-[中文版](./README_CN.md) 
+[English](./README.md) 
 
-### Introduction
+### 简介
 
-This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.
+这是一款微信小程序，能帮助Clash Royale玩家提前知道接下来的宝箱序列。
 
 ![alt text](./doc/ui_1.jpg)![alt text](./doc/ui_2.jpg)
 
-### How to use?
+### 如何使用?
 
-search `ChestTracer` in Mini Program of WeChat App
+在微信app小程序中，搜索`ChestTracer`。
 
 ### Features
 
-- show profile.
-- show upcoming chests.
-- ~~show upcoming shop offers.~~
-- record history tags.
-- no installation, no adds and less mobile phone traffic.
+- 展示个人信息。
+- 展示宝箱序列。
+- ~~展示商店商品序列。~~
+- 多账号管理。
+- 无需安装，没有广告，更少的手机流量消耗。
