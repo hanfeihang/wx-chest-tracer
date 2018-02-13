@@ -1,64 +1,69 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">Chest Tracer</view>
-    <view class="page__desc">This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.</view>
+    <view class="page__desc">这是一款微信小程序，能帮助Clash Royale玩家提前知道接下来的宝箱序列。</view>
     <!--<view class="page__desc text-right">Author Hansoon</view>-->
   </view>
   <view class="page__bd">
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">Version History</view>
+      <view class="weui-panel__hd">更新历史</view>
       <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.3</view>
+          <view class="weui-media-box__desc display-inline-half">2018.02.13</view>
+          <view class="weui-media-box__desc">1.适配官网页面变动 - 名字缺失</view>
+        </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.2</view>
           <view class="weui-media-box__desc display-inline-half">2017.12.12</view>
-          <view class="weui-media-box__desc">1.statsroyale page changed, fix it</view>
+          <view class="weui-media-box__desc">1.适配官网页面变动 - 部分宝箱不显示</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.1</view>
           <view class="weui-media-box__desc display-inline-half">2017.08.12</view>
-          <view class="weui-media-box__desc">1.statsroyale page changed, fix it</view>
+          <view class="weui-media-box__desc">1.适配官网页面变动</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.0</view>
           <view class="weui-media-box__desc display-inline-half">2017.07.19</view>
-          <view class="weui-media-box__desc">1.new feature - upcoming shop offers</view>
-          <view class="weui-media-box__desc">2.optimize tips for new users</view>
+          <view class="weui-media-box__desc">1.新功能 - upcoming shop offers</view>
+          <view class="weui-media-box__desc">2.优化提示</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.3</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.28</view>
-          <view class="weui-media-box__desc">1.optimize tips</view>
+          <view class="weui-media-box__desc">1.优化提示</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.2</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.19</view>
-          <view class="weui-media-box__desc">1.add tag tips</view>
-          <view class="weui-media-box__desc">2.support tag include # symbol</view>
+          <view class="weui-media-box__desc">1.增加tag提示</view>
+          <view class="weui-media-box__desc">2.输入tag时支持#号</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.1</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.12</view>
-          <view class="weui-media-box__desc">1.some bugs fixed</view>
-          <view class="weui-media-box__desc">2.auto choose the tag you are using in history tag list</view>
-          <view class="weui-media-box__desc">3.refresh on pull down</view>
+          <view class="weui-media-box__desc">1.修复部分bug</view>
+          <view class="weui-media-box__desc">2.自动选择列表中你在使用的tag</view>
+          <view class="weui-media-box__desc">3.下滑页面刷新</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.0</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.07</view>
-          <view class="weui-media-box__desc">1.make refresh profile and show profile on one click</view>
-          <view class="weui-media-box__desc">2.optimize page display</view>
-          <view class="weui-media-box__desc">3.add ‘about’ page</view>
+          <view class="weui-media-box__desc">1.合并操作，保留一个刷新按钮</view>
+          <view class="weui-media-box__desc">2.优化页面展示</view>
+          <view class="weui-media-box__desc">3.增加about页面</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.3</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.01</view>
-          <view class="weui-media-box__desc">1.support history tags</view>
-          <view class="weui-media-box__desc">2.fix bugs: chest pictures did not show in android phone</view>
+          <view class="weui-media-box__desc">1.支持历史tag记录</view>
+          <view class="weui-media-box__desc">2.修复安卓机型无法展示本地图片的问题</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.0</view>
           <view class="weui-media-box__desc display-inline-half">2017.05.22</view>
-          <view class="weui-media-box__desc">1.init version</view>
+          <view class="weui-media-box__desc">1.初始化版本</view>
         </view>
       </view>
       <!--<view class="weui-panel__ft">

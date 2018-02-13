@@ -258,7 +258,7 @@ Page({
   showUsername: function () {
     try{
       var html = this.data.statsHtml
-      var reg = /<div class="ui__headerMedium profileHeader__name">\n(.*?)<span/gm;
+      var reg = /<span class="profileHeader__nameCaption">\n(.*?)<\/span/gm;
       var r = reg.exec(html)
       var username = r[1].trim()
       this.setData({

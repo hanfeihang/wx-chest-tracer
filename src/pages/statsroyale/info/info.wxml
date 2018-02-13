@@ -9,11 +9,11 @@
         <view class="weui-panel__bd">
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">1. 如何使用</view>
-            <view class="weui-media-box__desc">输入TAG后，点击Refresh按钮，稍等片刻即可。下拉页面可查询最新宝箱数据。</view>
+            <view class="weui-media-box__desc">输入TAG后，点击Update按钮，稍等片刻即可。下拉页面可查询最新宝箱数据。</view>
           </view>
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">2. 刷新</view>
-            <view class="weui-media-box__desc">用户每隔1小时可以更新宝箱数据。更新请求会排队执行。</view>
+            <view class="weui-media-box__desc">用户每隔1小时左右可以更新宝箱数据。更新请求会排队执行。</view>
           </view>
           <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">3. 数据来源</view>
