@@ -12,6 +12,7 @@
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.3</view>
           <view class="weui-media-box__desc display-inline-half">2018.02.13</view>
           <view class="weui-media-box__desc">1.适配官网页面变动 - 名字缺失</view>
+          <view class="weui-media-box__desc">1.将 [关于] 页面中文化</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.2</view>
