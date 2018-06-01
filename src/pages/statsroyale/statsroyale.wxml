@@ -2,31 +2,37 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title" style="height:32px">{{username}}</view>
-
-    <view class="page__desc">
-      <!--<view class="weui-cell__ft">Level 12</view>-->
+    <!-- <view class="page__desc">
       <navigator url="tag/tag" class="page__desc" hover-class="weui-cell_active" style="height:22px">
         <view wx:if="{{userId == ''}}" class="weui-cell__ft weui-cell__ft_in-access">请输入TAG</view>
         <view wx:if="{{userId != ''}}" class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
       </navigator>
       <view class="weui-cell__ft" style="height:22px">{{timeLastUpdate}}</view>
-    </view>
+    </view> -->
   </view>
-
   <view class="page__bd">
-    <!--<view class="weui-cells__title">Infomation</view>
+    <view class="weui-cells__title">个人信息</view>
     <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell">
-        <view class="weui-cell__bd">Level</view>
-        <view class="weui-cell__ft">{{level}}</view>
+      <navigator url="tag/tag" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">TAG</view>
+        <view wx:if="{{userId == ''}}" class="weui-cell__ft weui-cell__ft_in-access">请输入TAG</view>
+        <view wx:if="{{userId != ''}}" class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
+      </navigator>
+      <view wx:if="{{userId != ''}}" class="weui-cell" bindtap="refreshProfile">
+        <view class="weui-cell__bd">更新
+          <icon wx:if="{{secondsToUpdate == 0}}" type="info_circle" size="23"></icon>
+          <icon wx:if="{{secondsToUpdate > 0}}" type="circle" size="23"></icon>
+          <icon wx:if="{{secondsToUpdate < 0}}" type="success_no_circle" size="23"></icon>
+        </view>
+        <view wx:if="{{secondsToUpdate <= 0}}" class="weui-cell__ft weui-cell__ft_in-access">{{timeLastUpdate}}</view>
+        <view wx:if="{{secondsToUpdate > 0}}" class="weui-cell__ft weui-cell__ft_in-access">Ready in ({{secondsToUpdate}}) seconds</view>
       </view>
-
-      <view class="weui-cell">
-        <view class="weui-cell__bd">Clan</view>
-        <view class="weui-cell__ft">{{clan}}</view>
-      </view>
-    </view>-->
-    <view class="page__bd_spacing">
+      <navigator wx:if="{{clanName != ''}}" url="war/war" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">部落</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{clanName}}</view>
+      </navigator>
+    </view>
+     <!-- <view wx:if="{{userId != ''}}" class="page__bd_spacing">
       <view wx:if="{{secondsToUpdate == 0}}">
         <button class="weui-btn" bindtap="refreshProfile" type="primary">Update</button>
       </view>
@@ -36,7 +42,7 @@
       <view wx:if="{{secondsToUpdate < 0}}">
         <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Update</button>
       </view>
-    </view>
+    </view>  -->
 
     <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">
       <view wx:if="{{buttonName == 'Loading'}}" class="weui-loading"></view>
@@ -45,7 +51,7 @@
 
     <view wx:if="{{buttonName == 'Ready'}}">
       <view wx:if="{{chests.length != 0}}">
-        <view class="weui-cells__title">Upcoming Chests</view>
+        <view class="weui-cells__title">宝箱序列</view>
         <view class="weui-grids">
           <block wx:for="{{chests}}" wx:key="chestNum" wx:for-item="item">
             <navigator class="weui-grid" hover-class="none">

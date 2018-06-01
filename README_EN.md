@@ -17,5 +17,6 @@ search `ChestTracer` in Mini Program of WeChat App
 - show profile.
 - show upcoming chests.
 - ~~show upcoming shop offers.~~
+- show clan war.
 - record history tags.
 - no installation, no adds and less mobile phone traffic.

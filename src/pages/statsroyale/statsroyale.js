@@ -11,7 +11,7 @@ Page({
     timeLastUpdate: "",
     username: "",
     secondsToUpdate: 0,
-    clan: "",
+    clanName: "",
     level: "",
     statsHtml: null
   },
@@ -22,7 +22,7 @@ Page({
       userId: "",
       timeLastUpdate: "",
       level: "",
-      clan: ""
+      clanName: ""
     })
   },
 
@@ -120,7 +120,7 @@ Page({
   loadProfile: function () {
     if (this.data.userId == null || this.data.userId.trim() == "") {
       this.setData({
-        buttonName: "请输入UserTag"
+        buttonName: ""
       })
       return;
     }
@@ -131,7 +131,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'https://statsroyale.com/profile/' + this.data.userId, //仅为示例，并非真实的接口地址
+      url: 'https://statsroyale.com/profile/' + this.data.userId,
       data: {
       },
       header: {
@@ -160,8 +160,8 @@ Page({
           that.showUpcomingShopOffers();
           that.showTimeLastUpdate();
           that.showUsername();
-          // that.showLevel();
-          // that.showClan();
+          that.showLevel();
+          that.showClan();
           that.saveToHistoryTags(that.data.userId);
         }
       },
@@ -219,9 +219,9 @@ Page({
 
     while (r = reg.exec(html)) {
       var chestNum = r[1].trim();
-      if(r[2].trim().split(':').length == 2){
+      if (r[2].trim().split(':').length == 2) {
         var chestType = r[2].split(':')[1].trim();
-      }else {
+      } else {
         var chestType = r[2].trim();
       }
       chestdata.push({ chestNum: chestNum, chestType: chestType.replace(new RegExp(/ /g), '') })
@@ -256,7 +256,7 @@ Page({
   },
 
   showUsername: function () {
-    try{
+    try {
       var html = this.data.statsHtml
       var reg = /<span class="profileHeader__nameCaption">\n(.*?)<\/span/gm;
       var r = reg.exec(html)
@@ -271,7 +271,7 @@ Page({
 
   showLevel: function () {
     var html = this.data.statsHtml
-    var reg = /<span class="statistics__userLevel">(.*?)<\/span>\n/gm;
+    var reg = /<span class="profileHeader__userLevel">(.*?)<\/span>\n/gm;
     var r = reg.exec(html)
     var lvl = r[1].trim()
     this.setData({ level: lvl })
@@ -279,10 +279,19 @@ Page({
 
   showClan: function () {
     var html = this.data.statsHtml
-    var reg = /<img src='\/images\/badges\/.*?png' class="statistics__smallClanBadge" \/>\n(.*?)\n/gm;
+    var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
     var r = reg.exec(html)
-    var clan = r[1].trim()
-    this.setData({ clan: clan })
+    var clanId = r[1].trim()
+    var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
+    var r2 = reg2.exec(html)
+    var clanName = r2[1].trim()
+    this.setData({
+      clanName: clanName
+    })
+    try {
+      wx.setStorageSync('clashroyale.clanId', clanId)
+    } catch (e) {
+    }
   },
 
   refreshProfile: function () {

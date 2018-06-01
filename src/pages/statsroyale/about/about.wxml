@@ -8,7 +8,13 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">更新历史</view>
       <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.3.0</view>
+          <view class="weui-media-box__desc display-inline-half">2018.06.02</view>
+          <view class="weui-media-box__desc">1.增加部落战信息</view>
+          <view class="weui-media-box__desc">2.调整页面布局</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.2.3</view>
           <view class="weui-media-box__desc display-inline-half">2018.02.13</view>
           <view class="weui-media-box__desc">1.适配官网页面变动 - 名字缺失</view>
@@ -38,14 +44,14 @@
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.2</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.19</view>
-          <view class="weui-media-box__desc">1.增加tag提示</view>
-          <view class="weui-media-box__desc">2.输入tag时支持#号</view>
+          <view class="weui-media-box__desc">1.增加TAG提示</view>
+          <view class="weui-media-box__desc">2.输入TAG时支持#号</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.1.1</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.12</view>
-          <view class="weui-media-box__desc">1.修复部分bug</view>
-          <view class="weui-media-box__desc">2.自动选择列表中你在使用的tag</view>
+          <view class="weui-media-box__desc">1.修复部分BUG</view>
+          <view class="weui-media-box__desc">2.自动选择列表中你在使用的TAG</view>
           <view class="weui-media-box__desc">3.下滑页面刷新</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
@@ -53,12 +59,12 @@
           <view class="weui-media-box__desc display-inline-half">2017.06.07</view>
           <view class="weui-media-box__desc">1.合并操作，保留一个刷新按钮</view>
           <view class="weui-media-box__desc">2.优化页面展示</view>
-          <view class="weui-media-box__desc">3.增加about页面</view>
+          <view class="weui-media-box__desc">3.增加 [关于] 页面</view>
         </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.0.3</view>
           <view class="weui-media-box__desc display-inline-half">2017.06.01</view>
-          <view class="weui-media-box__desc">1.支持历史tag记录</view>
+          <view class="weui-media-box__desc">1.支持历史TAG记录</view>
           <view class="weui-media-box__desc">2.修复安卓机型无法展示本地图片的问题</view>
         </view>
         <view class="weui-media-box weui-media-box_text">

@@ -176,6 +176,10 @@ Page({
       wx.setStorageSync('clashroyale.userId', "")
     } catch (e) {
     }
+    try {
+      wx.setStorageSync('clashroyale.clanId', "")
+    } catch (e) {
+    }
     this.setData({
       historyTags: [],
       inputUserId: ""
