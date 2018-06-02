@@ -5,6 +5,7 @@ Page({
    */
   data: {
     clanId: "",
+    warType: "",
     warMembers: [],
     warClans: [],
     timeLeft: "",
@@ -59,7 +60,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log("onPullDownRefresh");
+    this.loadHtml();
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -100,13 +103,13 @@ Page({
     var r;
     var warMembers = [];
     while (r = reg.exec(html)) {
-        warMembers.push({
-          rank: r[1].trim(),
-          name: this.htmlDecodeByRegExp(r[2].trim()),
-          battle: r[3].trim(),
-          wins: r[4].trim(),
-          cards: r[5].trim()
-        })
+      warMembers.push({
+        rank: r[1].trim(),
+        name: this.htmlDecodeByRegExp(r[2].trim()),
+        battle: r[3].trim(),
+        wins: r[4].trim(),
+        cards: r[5].trim()
+      })
     }
     this.setData({ warMembers: warMembers })
   },
@@ -115,14 +118,46 @@ Page({
     var html = this.data.html
     var reg = /<div class="ui__mediumText clan__warRemainingTime">\n.*?\n(.*?)\n/gm;
     var r = reg.exec(html)
-    var timeLeft = r[1].replace(new RegExp(/•/g), '').trim()
-    this.setData({ timeLeft: timeLeft })
+    try {
+      var timeLeft = r[1].replace(new RegExp(/•/g), '').trim()
+      this.setData({ timeLeft: timeLeft })
+    } catch (e) {
+      console.log('部落战剩余时间解析错误')
+    }
+  },
+
+  showWarType: function () {
+    var html = this.data.html
+    var reg = /<div class="ui__headerSmall clan__warState">(.*?)<\/div>/gm;
+    var r = reg.exec(html)
+    var warType
+    try {
+      warType = r[1].trim()
+      switch (warType) {
+        case 'Collection Day':
+          warType = '集卡日'
+          break;
+        case 'War Day':
+          warType = '战斗日'
+          break;
+        default:
+          warType = '未开启'
+      }
+    } catch (e) {
+      console.log('无部落战')
+      warType = '未开启'
+    }
+    this.setData({ warType: warType })
   },
 
   loadHtml: function () {
     var that = this;
+    var clanId = this.data.clanId
+    if (clanId.startsWith('#')) {
+      clanId = clanId.substring(1)
+    }
     wx.request({
-      url: 'https://statsroyale.com/clan/' + this.data.clanId + '/war',
+      url: 'https://statsroyale.com/clan/' + clanId + '/war',
       data: {
       },
       header: {
@@ -134,6 +169,7 @@ Page({
         that.setData({
           html: html
         })
+        that.showWarType();
         that.showWarMembers();
         that.showTimeLeft();
         that.showWarClans();
