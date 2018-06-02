@@ -166,7 +166,6 @@ Page({
         }
       },
       fail: function (res) {
-        console.log(res);
         that.setData({
           buttonName: 'Connection Error'
         })
@@ -278,25 +277,35 @@ Page({
   },
 
   showClan: function () {
-    var html = this.data.statsHtml
-    var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
-    var r = reg.exec(html)
-    var clanId = r[1].trim()
-    var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
-    var r2 = reg2.exec(html)
-    var clanName = r2[1].trim()
-    this.setData({
-      clanName: clanName
-    })
+    try {
+      var html = this.data.statsHtml
+      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
+      var r = reg.exec(html)
+      var clanId = r[1].trim()
+      var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
+      var r2 = reg2.exec(html)
+      var clanName = r2[1].trim()
+      this.setData({
+        clanName: clanName
+      })
+    } catch (e) {
+      console.log('no clan information')
+    }
     try {
       wx.setStorageSync('clashroyale.clanId', clanId)
     } catch (e) {
     }
+    // 当解析到clanId时，异步去刷新clan信息
+    util.refreshWar(clanId)
   },
 
   refreshProfile: function () {
+    // 防止二次点击
+    if (this.data.secondsToUpdate != 0) {
+      return
+    }
     this.setData({
-      secondsToUpdate: -9
+      secondsToUpdate: -9 // 防止二次刷新
     })
     var that = this
     wx.request({
@@ -307,6 +316,7 @@ Page({
         //'content-type': 'application/json'
       },
       success: function (res) {
+        console.log("refreshProfile success")
         var delay;
         if (res.data.success == true) {
           wx.showToast({
@@ -346,11 +356,10 @@ Page({
           })
         }, function () {
           that.loadProfile()
-          console.log("after all")
+          console.log("倒计时后，刷新信息完成")
         })
       },
       fail: function (res) {
-        console.log(res);
         wx.showModal({
           content: "Connection Error",
           showCancel: false,
@@ -382,7 +391,6 @@ Page({
             }
           });
         }
-        console.log('refreshProfile test')
       }
     })
   }

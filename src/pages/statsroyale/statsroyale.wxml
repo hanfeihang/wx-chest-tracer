@@ -18,9 +18,18 @@
         <view wx:if="{{userId == ''}}" class="weui-cell__ft weui-cell__ft_in-access">请输入TAG</view>
         <view wx:if="{{userId != ''}}" class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
       </navigator>
-      <view wx:if="{{userId != ''}}" class="weui-cell" bindtap="refreshProfile">
+      <!-- 通过2个一样的组件，来实现防止二次点击，这是带bindtap的组件，refreshProfile里会修改secondsToUpdate的值不等于0 -->
+      <view wx:if="{{userId!=''&&secondsToUpdate==0}}" class="weui-cell" bindtap="refreshProfile">
         <view class="weui-cell__bd">更新
-          <icon wx:if="{{secondsToUpdate == 0}}" type="info_circle" size="23"></icon>
+          <icon type="info_circle" size="23"></icon>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          {{timeLastUpdate}}
+        </view>
+      </view>
+      <!-- 通过2个一样的组件，来实现防止二次点击，这是不带bindtap的组件 -->
+      <view wx:if="{{userId != ''&&secondsToUpdate!=0}}" class="weui-cell">
+        <view class="weui-cell__bd">更新
           <icon wx:if="{{secondsToUpdate > 0}}" type="circle" size="23"></icon>
           <icon wx:if="{{secondsToUpdate < 0}}" type="success_no_circle" size="23"></icon>
         </view>
@@ -32,7 +41,7 @@
         <view class="weui-cell__ft weui-cell__ft_in-access">{{clanName}}</view>
       </navigator>
     </view>
-     <!-- <view wx:if="{{userId != ''}}" class="page__bd_spacing">
+    <!-- <view wx:if="{{userId != ''}}" class="page__bd_spacing">
       <view wx:if="{{secondsToUpdate == 0}}">
         <button class="weui-btn" bindtap="refreshProfile" type="primary">Update</button>
       </view>

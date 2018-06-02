@@ -17,7 +17,7 @@ function schedule(seconds, funcInInterval, funcAfterAll) {
   var Intertimer = setInterval(function () {
     //这个函数是先延迟，后执行
     index++;
-    console.log(index)
+    console.log("倒计时:" + index)
     funcInInterval()
     //判断index是否达到集合最后一个
     if (index >= seconds) {
@@ -33,7 +33,29 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function refreshWar(clanId) {
+  wx.request({
+    url: 'https://statsroyale.com/clan/' + clanId + '/refresh',
+    data: {
+    },
+    header: {
+      //'content-type': 'application/json'
+    },
+    success: function (res) {
+      console.log("refreshWar success");
+    },
+    fail: function (res) {
+      console.log("refreshWar fail");
+    },
+    complete: function (res) {
+      // success -> complete
+      console.log("refreshWar complete");
+    }
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
-  schedule: schedule
+  schedule: schedule,
+  refreshWar: refreshWar
 }

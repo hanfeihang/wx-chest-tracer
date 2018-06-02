@@ -1,6 +1,5 @@
 // pages/statsroyale/war/war.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -25,7 +24,6 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
-    this.refreshWar()
     this.loadHtml()
   },
 
@@ -144,27 +142,6 @@ Page({
         console.log("fail" + res);
       },
       complete: function (res) {
-        console.log("complete" + res);
-      }
-    })
-  },
-
-  refreshWar: function () {
-    wx.request({
-      url: 'https://statsroyale.com/clan/' + this.data.clanId + '/refresh',
-      data: {
-      },
-      header: {
-        //'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log("success" + res);
-      },
-      fail: function (res) {
-        console.log("fail" + res);
-      },
-      complete: function (res) {
-        // success -> complete
         console.log("complete" + res);
       }
     })
