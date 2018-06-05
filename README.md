@@ -6,7 +6,7 @@
 
 这是一款微信小程序，能帮助Clash Royale玩家提前知道接下来的宝箱序列。
 
-![alt text](./doc/ui_1.jpg)![alt text](./doc/ui_2.jpg)
+![alt text](./doc/ui_1.png)![alt text](./doc/ui_2.png)
 
 ### 如何使用?
 

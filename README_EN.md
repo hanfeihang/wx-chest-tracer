@@ -6,7 +6,7 @@
 
 This is a WeChat mini program that helps Clash Royale players know which chest is upcoming.
 
-![alt text](./doc/ui_1.jpg)![alt text](./doc/ui_2.jpg)
+![alt text](./doc/ui_1.png)![alt text](./doc/ui_2.png)
 
 ### How to use?
 
