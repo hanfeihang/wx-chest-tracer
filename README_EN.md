@@ -1,6 +1,6 @@
 # wx-chest-tracer
 
-[中文版](./README_CN.md) 
+[中文版](./README_CN.md)
 
 ### Introduction
 
@@ -18,5 +18,6 @@ search `ChestTracer` in Mini Program of WeChat App
 - show upcoming chests.
 - ~~show upcoming shop offers.~~
 - show clan war.
+- show clan war history.
 - record history tags.
 - no installation, no adds and less mobile phone traffic.

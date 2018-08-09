@@ -9,6 +9,11 @@
       <view class="weui-panel__hd">更新历史</view>
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.4.0</view>
+          <view class="weui-media-box__desc display-inline-half">2018.08.10</view>
+          <view class="weui-media-box__desc">1.增加部落战历史</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.3.0</view>
           <view class="weui-media-box__desc display-inline-half">2018.06.02</view>
           <view class="weui-media-box__desc">1.增加部落战信息</view>

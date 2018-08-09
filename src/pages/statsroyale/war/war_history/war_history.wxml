@@ -1,0 +1,29 @@
+<!--pages/statsroyale/war/war_history/war_history.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">偷懒名单</view>
+    <view class="page__desc">本页展示了【参与集卡日，但未参与战斗日】的成员名单，方便部落管理员进行管理。请友善的对待每一个部落成员:)</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{historyWars}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.season}}</view>
+            <view class="weui-cell__ft">{{item.time}}</view>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for="{{item.notBattleUsers}}" wx:for-item="users" wx:key="*this">
+                <navigator class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{users.name}}</view>
+                  <!-- <view class="weui-cell__bd">{{users.battleNum}}</view> -->
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

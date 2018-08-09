@@ -2,6 +2,7 @@
   <view class="page__hd">
     <view class="page__title">部落战 {{warType}}</view>
     <view wx:if="{{warType!='未开启'}}" class="page__desc">剩余 {{timeLeft}}</view>
+    <navigator url="war_history/war_history" class="page__desc" style='float:right'>历史战绩 ></navigator>
   </view>
   <view class="page__bd">
     <view wx:if="{{warType=='战斗日'}}">

@@ -2,13 +2,6 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title" style="height:32px">{{username}}</view>
-    <!-- <view class="page__desc">
-      <navigator url="tag/tag" class="page__desc" hover-class="weui-cell_active" style="height:22px">
-        <view wx:if="{{userId == ''}}" class="weui-cell__ft weui-cell__ft_in-access">请输入TAG</view>
-        <view wx:if="{{userId != ''}}" class="weui-cell__ft weui-cell__ft_in-access">{{userId}}</view>
-      </navigator>
-      <view class="weui-cell__ft" style="height:22px">{{timeLastUpdate}}</view>
-    </view> -->
   </view>
   <view class="page__bd">
     <view class="weui-cells__title">个人信息</view>
@@ -41,18 +34,7 @@
         <view class="weui-cell__ft weui-cell__ft_in-access">{{clanName}}</view>
       </navigator>
     </view>
-    <!-- <view wx:if="{{userId != ''}}" class="page__bd_spacing">
-      <view wx:if="{{secondsToUpdate == 0}}">
-        <button class="weui-btn" bindtap="refreshProfile" type="primary">Update</button>
-      </view>
-      <view wx:if="{{secondsToUpdate > 0}}">
-        <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Ready in ({{secondsToUpdate}}) seconds</button>
-      </view>
-      <view wx:if="{{secondsToUpdate < 0}}">
-        <button class="weui-btn" bindtap="refreshProfile" type="primary" disabled="true">Update</button>
-      </view>
-    </view>  -->
-
+    
     <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">
       <view wx:if="{{buttonName == 'Loading'}}" class="weui-loading"></view>
       <veiw class="weui-loadmore__tips">{{buttonName}}</veiw>

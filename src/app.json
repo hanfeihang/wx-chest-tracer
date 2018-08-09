@@ -1,11 +1,11 @@
 {
   "pages": [
-    
     "pages/statsroyale/statsroyale",
     "pages/statsroyale/info/info",
     "pages/statsroyale/tag/tag",
     "pages/statsroyale/about/about",
-    "pages/statsroyale/war/war"
+    "pages/statsroyale/war/war",
+    "pages/statsroyale/war/war_history/war_history"
   ],
   "window": {
     "backgroundTextStyle": "light",
