@@ -2,7 +2,12 @@
   <view class="page__hd">
     <view class="page__title">部落战 {{warType}}</view>
     <view wx:if="{{warType!='未开启'}}" class="page__desc">剩余 {{timeLeft}}</view>
-    <navigator url="war_history/war_history" class="page__desc" style='float:right'>历史战绩 ></navigator>
+    <!-- <view style='display:block'>
+      <navigator url="war_win_rate/war_win_rate" class="page__desc" style='text-align:right'>胜率排名 ></navigator>
+    </view>
+    <view style='display:block'>
+      <navigator url="war_history/war_history" class="page__desc" style='text-align:right'>偷懒名单 ></navigator>
+    </view> -->
   </view>
   <view class="page__bd">
     <view wx:if="{{warType=='战斗日'}}">
@@ -24,16 +29,16 @@
             <image src="/resources/war/clan-trophies.png" style="margin-right: 5px;vertical-align: middle;width:17px; height: 18px;"></image>
           </view>
         </view>
-          <block wx:for="{{warClans}}" wx:key="rank" wx:for-item="item">
-            <view class="weui-cell">
-              <view class="weui-cell__ft rank">{{item.rank}}</view>
-              <view class="weui-cell__bd name">{{item.name}}</view>
-              <view class="weui-cell__ft icons_clan">{{item.battles}}</view>
-              <view class="weui-cell__ft icons_clan">{{item.wins}}</view>
-              <view class="weui-cell__ft icons_clan">{{item.crowns}}</view>
-              <view class="weui-cell__ft icons_clan">{{item.trophies}}</view>
-            </view>
-          </block>
+        <block wx:for="{{warClans}}" wx:key="rank" wx:for-item="item">
+          <view class="weui-cell">
+            <view class="weui-cell__ft rank">{{item.rank}}</view>
+            <view class="weui-cell__bd name">{{item.name}}</view>
+            <view class="weui-cell__ft icons_clan">{{item.battles}}</view>
+            <view class="weui-cell__ft icons_clan">{{item.wins}}</view>
+            <view class="weui-cell__ft icons_clan">{{item.crowns}}</view>
+            <view class="weui-cell__ft icons_clan">{{item.trophies}}</view>
+          </view>
+        </block>
       </view>
     </view>
     <view class="weui-cells__title">部落成员排名</view>
@@ -51,15 +56,15 @@
           <image src="/resources/war/common-cards.png" style="margin-right: 5px;vertical-align: middle;width:16px; height: 18px;"></image>
         </view>
       </view>
-        <block wx:for="{{warMembers}}" wx:key="rank" wx:for-item="item">
-          <view class="weui-cell">
-            <view class="weui-cell__ft rank">{{item.rank}}</view>
-            <view class="weui-cell__bd name">{{item.name}}</view>
-            <view class="weui-cell__ft icons">{{item.battle}}</view>
-            <view class="weui-cell__ft icons">{{item.wins}}</view>
-            <view class="weui-cell__ft icons">{{item.cards}}</view>
-          </view>
-        </block>
+      <block wx:for="{{warMembers}}" wx:key="rank" wx:for-item="item">
+        <view class="weui-cell">
+          <view class="weui-cell__ft rank">{{item.rank}}</view>
+          <view class="weui-cell__bd name">{{item.name}}</view>
+          <view class="weui-cell__ft icons">{{item.battle}}</view>
+          <view class="weui-cell__ft icons">{{item.wins}}</view>
+          <view class="weui-cell__ft icons">{{item.cards}}</view>
+        </view>
+      </block>
     </view>
   </view>
 </view>

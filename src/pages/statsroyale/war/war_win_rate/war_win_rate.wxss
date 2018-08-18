@@ -1,0 +1,36 @@
+/* pages/statsroyale/war/war_win_rate/war_win_rate.wxss */
+/* pages/statsroyale/war/war.wxss */
+
+.rank {
+  display: flex;
+  width: 13%;
+  text-align: center;
+}
+
+.name {
+  display: flex;
+  width: 55%;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  width: 10%;
+  text-align: center;
+}
+
+.rank {
+  display: flex;
+  width: 12%;
+  text-align: center;
+}
+
+.icons_clan {
+  display: flex;
+  width: 10%;
+  text-align: center;
+}
+
+.highlight {
+  color: #f00;
+}

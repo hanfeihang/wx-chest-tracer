@@ -5,7 +5,8 @@
     "pages/statsroyale/tag/tag",
     "pages/statsroyale/about/about",
     "pages/statsroyale/war/war",
-    "pages/statsroyale/war/war_history/war_history"
+    "pages/statsroyale/war/war_history/war_history",
+    "pages/statsroyale/war/war_win_rate/war_win_rate"
   ],
   "window": {
     "backgroundTextStyle": "light",

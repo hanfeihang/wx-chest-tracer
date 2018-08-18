@@ -266,6 +266,10 @@ Page({
     } catch (err) {
 
     }
+    try {
+      wx.setStorageSync('clashroyale.userName', this.data.username)
+    } catch (e) {
+    }
   },
 
   showLevel: function () {

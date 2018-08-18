@@ -144,7 +144,7 @@ Page({
 
       historyWars.push(historyOneWar)
     }
-    this.setData({ historyWars: historyWars })
+    this.setData({ historyWars: historyWars });
   },
 
   kindToggle: function (e) {
