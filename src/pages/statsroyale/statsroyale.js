@@ -42,6 +42,7 @@ Page({
     }
 
     this.loadProfile()
+    console.log('here3')
   },
 
   /**
@@ -63,7 +64,6 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
-    // 
   },
 
   /**
@@ -283,7 +283,7 @@ Page({
   showClan: function () {
     try {
       var html = this.data.statsHtml
-      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
+      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)"/gm;
       var r = reg.exec(html)
       var clanId = r[1].trim()
       var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
@@ -293,7 +293,7 @@ Page({
         clanName: clanName
       })
     } catch (e) {
-      console.log('no clan information')
+      console.log('no clan information' + e)
     }
     try {
       wx.setStorageSync('clashroyale.clanId', clanId)
