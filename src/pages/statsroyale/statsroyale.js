@@ -283,7 +283,7 @@ Page({
   showClan: function () {
     try {
       var html = this.data.statsHtml
-      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)"/gm;
+      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
       var r = reg.exec(html)
       var clanId = r[1].trim()
       var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
@@ -397,5 +397,5 @@ Page({
         }
       }
     })
-  }
+  },
 })

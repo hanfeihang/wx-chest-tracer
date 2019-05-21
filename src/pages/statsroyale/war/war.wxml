@@ -1,7 +1,7 @@
 <view class="page">
   <view class="page__hd">
     <view class="page__title">部落战 {{warType}}</view>
-    <view wx:if="{{warType!='未开启'}}" class="page__desc">剩余 {{timeLeft}}</view>
+    <!-- <view wx:if="{{warType!='未开启'}}" class="page__desc">剩余 {{timeLeft}}</view> -->
     <!-- <view style='display:block'>
       <navigator url="war_win_rate/war_win_rate" class="page__desc" style='text-align:right'>胜率排名 ></navigator>
     </view>

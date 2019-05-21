@@ -8,7 +8,7 @@ Page({
     inputUserId: null,
     historyTags: [],
     tagIndex: 0,
-    showTagGuide: false
+    showTagGuide: true
   },
 
   /**
