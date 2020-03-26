@@ -1,6 +1,6 @@
 <view class="page">
   <view class="page__hd">
-    <view class="page__title">Chest Tracer</view>
+    <view class="page__title">CR宝箱助手</view>
     <view class="page__desc">这是一款微信小程序，能帮助Clash Royale玩家提前知道接下来的宝箱序列。</view>
     <!--<view class="page__desc text-right">Author Hansoon</view>-->
   </view>
@@ -8,6 +8,13 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">更新历史</view>
       <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.5.0</view>
+          <view class="weui-media-box__desc display-inline-half">2020.03.26</view>
+          <view class="weui-media-box__desc">1.改名为CR宝箱助手</view>
+          <view class="weui-media-box__desc">2.改造成云开发模式</view>
+          <view class="weui-media-box__desc">3.使用微信赞赏码</view>
+        </view>
         <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.4.1</view>
           <view class="weui-media-box__desc display-inline-half">2018.08.19</view>

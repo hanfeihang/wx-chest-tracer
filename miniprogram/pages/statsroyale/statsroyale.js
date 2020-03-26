@@ -398,4 +398,20 @@ Page({
       }
     })
   },
+
+  /**
+   * 页面图片点击预览操作
+   */
+  previewImage: function (e) {
+    wx.previewImage({
+      current: "",
+      urls: ["cloud://prod-xu410.7072-prod-xu410-1301673313/thanks_code.jpg"],
+      fail: function () {
+        //console.log("not found")
+      },
+      complete: function () {
+        //console.info("点击图片了!")
+      }
+    })
+  },
 })

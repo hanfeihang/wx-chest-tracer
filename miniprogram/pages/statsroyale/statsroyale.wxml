@@ -81,16 +81,23 @@
       <view class="weui-footer__links">
         <navigator url="info/info" class="weui-footer__link">帮助</navigator>
         <navigator url="about/about" class="weui-footer__link">关于</navigator>
-        <navigator
+        <view 
+          class="weui-footer__link" 
+          bindtap="previewImage" 
+          style="color:#FF0000">
+        打赏
+        </view>
+        <!-- <navigator
           target="miniProgram"
           open-type="navigate"
           app-id="wx18a2ac992306a5a4"
           path="pages/apps/largess/detail?id=nOPctwPM%2F8ugPc1CLmE7uw%3D%3D"
           class="weui-footer__link"
           style="color:#FF0000"
+          bindtap="previewImage"
         >
         打赏
-        </navigator>
+        </navigator> -->
       </view>
       <view class="weui-footer__text">Copyright © 2017.05 Hansoon</view>
     </view>
