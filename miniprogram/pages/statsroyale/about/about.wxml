@@ -9,6 +9,11 @@
       <view class="weui-panel__hd">更新历史</view>
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.5.1</view>
+          <view class="weui-media-box__desc display-inline-half">2020.03.26</view>
+          <view class="weui-media-box__desc">1.修复部落信息展示</view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
           <view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.5.0</view>
           <view class="weui-media-box__desc display-inline-half">2020.03.26</view>
           <view class="weui-media-box__desc">1.改名为CR宝箱助手</view>
