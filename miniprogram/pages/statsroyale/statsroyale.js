@@ -142,7 +142,7 @@ Page({
         var x = html.indexOf("Profile is currently missing")
         if (x > 0) {
           that.setData({
-            buttonName: '档案缺失，请刷新'
+            buttonName: '档案缺失，请点击绿色感叹号刷新'
           })
           return;
         }
@@ -283,7 +283,7 @@ Page({
   showClan: function () {
     try {
       var html = this.data.statsHtml
-      var reg = /https:\/\/statsroyale.com\/clan\/(.*?)'/gm;
+      var reg = /clan\/(.*?)" class="ui__link ui__mediumText ui__whiteText profileHeader__userClan"/gm;
       var r = reg.exec(html)
       var clanId = r[1].trim()
       var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
