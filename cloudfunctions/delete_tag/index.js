@@ -8,12 +8,13 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
   const user_tag_rel_db = db.collection('user_tag_rel')
-  
-  try {
-    return await user_tag_rel_db.where({
-      user_id: wxContext.OPENID
-    }).remove()
-  } catch(e) {
-    console.error(e)
-  }
+  return new Promise((resolve, reject) => {
+    user_tag_rel_db.where({
+        user_id: wxContext.OPENID
+      })
+      .remove()
+      .then(ans => {
+        resolve(ans)
+      })
+  })
 }

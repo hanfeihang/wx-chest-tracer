@@ -133,7 +133,7 @@ Page({
       console.log('load_profile done')
       this.setData(res.result.data)
       this.setData({
-        buttonName: 'Ready'
+        buttonName: res.result.request_status
       })
       this.saveToHistoryTags()
       try {

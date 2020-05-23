@@ -7,28 +7,36 @@ cloud.init()
 loadProfile = (tag, user_id) => {
   let request_status = null
   let data = {}
-  let url = 'https://statsroyale.com/profile/' + tag
+  let url = 'https://statsroyale.com/profile/' + encodeURIComponent(tag)
   let res;
   try {
     res = request('GET', url, {})
   } catch (e) {
     request_status = 'Connection Error'
-    return
+    return {
+      request_status: request_status
+    } 
   }
   if (res.statusCode > 300) {
     request_status = 'Server Error'
-    return
+    return {
+      request_status: request_status
+    }
   }
   var html = res.getBody()
   var x = html.indexOf("Profile is currently missing")
   if (x > 0) {
     request_status = '档案缺失，请点击绿色感叹号刷新'
-    return
+    return {
+      request_status: request_status
+    }
   }
   x = html.indexOf("Invalid Hashtag Provided")
   if (x > 0) {
     request_status = 'TAG含有非法字符'
-    return
+    return {
+      request_status: request_status
+    }
   }
   request_status = 'Ready'
   let d1 = showUpcomingChests(html)
@@ -38,11 +46,10 @@ loadProfile = (tag, user_id) => {
   let d5 = showLevel(html);
   let d6 = showClan(html);
   data = Object.assign(d1, d2, d3, d4, d5, d6)
-  let ans = {
+  return {
     request_status: request_status,
     data: data
-  };
-  return ans
+  }
 }
 
 showUpcomingChests = (html) => {
