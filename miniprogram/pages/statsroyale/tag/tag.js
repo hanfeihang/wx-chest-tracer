@@ -1,11 +1,9 @@
-// tag.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    inputUserId: null,
+    inputTag: null,
     historyTags: [],
     tagIndex: 0,
     showTagGuide: true
@@ -15,46 +13,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    try {
-      var value = wx.getStorageSync('clashroyale.userId')
-      if (value) {
-        console.log(value)
-        this.setData({
-          inputUserId: value
-        })
-      }
-    } catch (e) {
-      // Do something when catch error
+    var value = wx.getStorageSync('clashroyale.userId')
+    if (value) {
+      console.log(value)
+      this.setData({
+        inputTag: value
+      })
     }
 
-    try {
-      var value = wx.getStorageSync('clashroyale.historyTags')
-      if (value) {
-        console.log(value)
-        this.setData({
-          historyTags: value
-        })
-        for (var i = 0; i < value.length; i++) {
-          if (value[i] == this.data.inputUserId) {
-            this.setData({
-              tagIndex: i
-            })
-          }
+    var historyTags = wx.getStorageSync('clashroyale.historyTags')
+    if (historyTags) {
+      console.log('historyTags from cache', historyTags)
+      this.setData({
+        historyTags: historyTags,
+      })
+      for (var i = 0; i < historyTags.length; i++) {
+        if (historyTags[i] == this.data.inputTag) {
+          this.setData({
+            tagIndex: i
+          })
         }
-        for (tag in value) {
-          if (tag == this.data.inputUserId) {
-            this.setData({
-              tagIndex: value
-            })
-          }
-        }
-
       }
-    } catch (e) {
-      // Do something when catch error
     }
-
   },
 
   /**
@@ -107,26 +87,24 @@ Page({
   },
 
   editUserId: function (e) {
-    this.setData({ inputUserId: e.detail.value })
+    this.setData({
+      inputTag: e.detail.value
+    })
   },
 
   confirmUserId: function () {
-    var userId = this.data.inputUserId;
+    var userId = this.data.inputTag;
     if (userId === null || userId.trim() == "") {
       wx.showModal({
         content: "请输入合法TAG",
         showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            //console.log('用户点击确定')
-          }
-        }
+        success: function (res) {}
       });
       return
     }
     //delete # in the start
-    var firstChar = userId.substr(0, 1);
-    if (firstChar == "#"){
+    var firstChar = userId.substr(0, 1)
+    if (firstChar == "#") {
       userId = userId.substr(1);
     }
     this.setData({
@@ -134,8 +112,7 @@ Page({
     })
     try {
       wx.setStorageSync('clashroyale.userId', this.data.userId)
-    } catch (e) {
-    }
+    } catch (e) {}
     wx.navigateBack({
       delta: 1
     })
@@ -147,7 +124,18 @@ Page({
     }
     var index = e.detail.value
     this.setData({
-      inputUserId: this.data.historyTags[index]
+      inputTag: this.data.historyTags[index]
+    })
+  },
+
+  deleteAllTags: function () {
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'delete_tag'
+    }).then(res => {
+      console.log('delete_tag res:', res)
+    }).catch(err => {
+      console.log('delete_tag err:', err)
     })
   },
 
@@ -160,8 +148,8 @@ Page({
       success: function (res) {
         if (res.confirm) {
           that.clearHistoryTags()
-        } else if (res.cancel) {
-        }
+          that.deleteAllTags()
+        } else if (res.cancel) {}
       }
     })
   },
@@ -170,19 +158,16 @@ Page({
     var empty = new Array()
     try {
       wx.setStorageSync('clashroyale.historyTags', empty)
-    } catch (e) {
-    }
+    } catch (e) {}
     try {
       wx.setStorageSync('clashroyale.userId', "")
-    } catch (e) {
-    }
+    } catch (e) {}
     try {
       wx.setStorageSync('clashroyale.clanId', "")
-    } catch (e) {
-    }
+    } catch (e) {}
     this.setData({
       historyTags: [],
-      inputUserId: ""
+      inputTag: ""
     })
   },
 

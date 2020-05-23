@@ -10,13 +10,12 @@ This is a WeChat mini program that helps Clash Royale players know which chest i
 
 ### How to use?
 
-search `ChestTracer` in Mini Program of WeChat App
+search `CR宝箱助手` in Mini Program of WeChat App
 
 ### Features
 
 - show profile.
 - show upcoming chests.
-- ~~show upcoming shop offers.~~
 - show clan war.
 - show clan war history.
 - record history tags.
