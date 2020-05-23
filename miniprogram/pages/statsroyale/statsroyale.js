@@ -135,10 +135,12 @@ Page({
       this.setData({
         buttonName: res.result.request_status
       })
-      this.saveToHistoryTags()
-      try {
-        wx.setStorageSync('clashroyale.clanId', res.result.data.clanId)
-      } catch (e) {}
+      if (res.result.request_status == 'Ready') {
+        this.saveToHistoryTags()
+        try {
+          wx.setStorageSync('clashroyale.clanId', res.result.data.clanId)
+        } catch (e) {}
+      }
     }).catch(err => {
       console.log('load_profile err:', err)
     })
