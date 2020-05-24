@@ -4,7 +4,7 @@ const request = require('sync-request')
 
 cloud.init()
 
-loadProfile = (tag, user_id) => {
+loadProfile = (tag) => {
   let request_status = null
   let data = {}
   let url = 'https://statsroyale.com/profile/' + encodeURIComponent(tag)
@@ -13,12 +13,14 @@ loadProfile = (tag, user_id) => {
     res = request('GET', url, {})
   } catch (e) {
     request_status = 'Connection Error'
+    console.error(request_status)
     return {
       request_status: request_status
-    } 
+    }
   }
   if (res.statusCode > 300) {
     request_status = 'Server Error'
+    console.error(request_status)
     return {
       request_status: request_status
     }
@@ -27,6 +29,7 @@ loadProfile = (tag, user_id) => {
   var x = html.indexOf("Profile is currently missing")
   if (x > 0) {
     request_status = '档案缺失，请点击绿色感叹号刷新'
+    console.error(request_status)
     return {
       request_status: request_status
     }
@@ -34,18 +37,18 @@ loadProfile = (tag, user_id) => {
   x = html.indexOf("Invalid Hashtag Provided")
   if (x > 0) {
     request_status = 'TAG含有非法字符'
+    console.error(request_status)
     return {
       request_status: request_status
     }
   }
   request_status = 'Ready'
   let d1 = showUpcomingChests(html)
-  let d2 = showUpcomingShopOffers(html)
   let d3 = showTimeLastUpdate(html);
   let d4 = showUsername(html);
   let d5 = showLevel(html);
   let d6 = showClan(html);
-  data = Object.assign(d1, d2, d3, d4, d5, d6)
+  data = Object.assign(d1, d3, d4, d5, d6)
   return {
     request_status: request_status,
     data: data
@@ -70,22 +73,6 @@ showUpcomingChests = (html) => {
   }
   return {
     chests: chestdata
-  }
-}
-
-showUpcomingShopOffers = (html) => {
-  var reg = /<div class="offers__name">(.*?)<\/div>\n.*?<div>(.*?)<\/div>/gm;
-  var r;
-  var shopOffers = []
-  while (r = reg.exec(html)) {
-    shopOffers.push({
-      offerName: r[1].trim(),
-      offerPngName: r[1].trim().toLowerCase().replace(' ', '-') + '-offer',
-      offerTime: r[2].trim()
-    })
-  }
-  return {
-    upcomingShopOffers: shopOffers
   }
 }
 
@@ -141,5 +128,6 @@ showClan = (html) => {
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  return loadProfile(event.tag, wxContext.OPENID)
+  console.log('args:', event.tag, wxContext.OPENID)
+  return loadProfile(event.tag)
 }
