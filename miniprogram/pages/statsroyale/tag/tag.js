@@ -5,8 +5,7 @@ Page({
   data: {
     inputTag: null,
     historyTags: [],
-    tagIndex: 0,
-    showTagGuide: true
+    tagIndex: 0
   },
 
   /**
@@ -170,11 +169,4 @@ Page({
       inputTag: ""
     })
   },
-
-  showTagGuide: function () {
-    var bol = this.data.showTagGuide;
-    this.setData({
-      showTagGuide: !bol
-    })
-  }
 })

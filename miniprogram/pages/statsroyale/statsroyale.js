@@ -10,8 +10,8 @@ Page({
     userId: "",
     timeLastUpdate: "",
     username: "",
-    secondsToUpdate: 0,
     clanName: null,
+    clanId: null,
     level: "",
     statsHtml: null
   },
@@ -140,9 +140,26 @@ Page({
         try {
           wx.setStorageSync('clashroyale.clanId', res.result.data.clanId)
         } catch (e) {}
+        this.refreshClanProfile();
       }
     }).catch(err => {
       console.log('load_profile err:', err)
+    })
+  },
+
+  refreshClanProfile: function () {
+    if (this.data.clanId == null || this.data.clanId.trim() == "") {
+      return
+    }
+    wx.cloud.callFunction({
+      name: 'refresh_clan_profile',
+      data: {
+        clanId: this.data.clanId
+      },
+    }).then(res => {
+      console.log('refresh_clan_profile done, resp:', resp)
+    }).catch(err => {
+      console.log('refresh_clan_profile err:', err)
     })
   },
 

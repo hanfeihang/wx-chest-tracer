@@ -31,10 +31,10 @@
             <view class="weui-media-box__title weui-media-box__title_in-text">5. 档案缺失</view>
             <view class="weui-media-box__desc">如果多次更新后还一直提示档案缺失，请确认TAG是否正确。</view>
           </view>
-          <view class="weui-media-box weui-media-box_text">
+          <!-- <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__title weui-media-box__title_in-text">6. 联系方式</view>
             <view class="weui-media-box__desc">812362709@qq.com</view>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>

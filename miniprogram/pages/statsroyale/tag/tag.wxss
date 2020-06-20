@@ -2,3 +2,6 @@
 .text-center {
   text-align:center;
 }
+.guides {
+  margin: 20px;
+}

@@ -15,10 +15,9 @@
         <button type="default">历史纪录</button>
       </picker>
       <button class="weui-btn" type="warn" bindtap="clearHistoryTagsConfirm">清空历史纪录</button>
-      <button bindtap="showTagGuide" class="weui-btn mini-btn" type="default" size="mini">TAG在哪</button>
     </view>
 
-    <view wx:if="{{showTagGuide}}" class="weui-footer__links">
+    <view class="weui-footer__links guides">
       <view class="weui-media-box__desc text-center">请注意TAG只会包含以下字符:</view>
       <view class="weui-media-box__desc text-center">数字0, 2, 8, 9</view>
       <view class="weui-media-box__desc text-center">字母P,Y,L,Q,G,R,J,C,U,V</view>
