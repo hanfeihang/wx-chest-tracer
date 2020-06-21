@@ -115,6 +115,7 @@ Page({
 
   loadProfileV2: function () {
     if (this.data.userId == null || this.data.userId.trim() == "") {
+      this.loadHistoryTags();
       this.setData({
         buttonName: ""
       })
@@ -157,7 +158,7 @@ Page({
         clanId: this.data.clanId
       },
     }).then(res => {
-      console.log('refresh_clan_profile done, resp:', resp)
+      console.log('refresh_clan_profile done, res:', res)
     }).catch(err => {
       console.log('refresh_clan_profile err:', err)
     })
@@ -184,7 +185,7 @@ Page({
       // 要调用的云函数名称
       name: 'get_tags_by_user'
     }).then(res => {
-      console.log('loadHistoryTags done')
+      console.log('get_tags_by_user done')
       if (res && res.result) {
         try {
           wx.setStorageSync('clashroyale.historyTags', res.result.tags)
