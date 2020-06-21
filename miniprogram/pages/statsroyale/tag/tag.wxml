@@ -1,29 +1,33 @@
-<!--tag.wxml-->
-<view class="page">
-  <view class="page__bd">
-    <view class="weui-cells__title">请输入TAG</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-          <input confirm-type="done" maxlength="12" bindinput="editUserId" class="weui-input" placeholder="{{inputTag}}" />
-        </view>
-      </view>
-    </view>
-    <view class="weui-btn-area">
-      <button class="weui-btn" type="primary" bindtap="confirmUserId">确认</button>
-      <picker class="weui-btn" bindchange="bindPickerChange" value="{{tagIndex}}" range="{{historyTags}}">
-        <button type="default">历史纪录</button>
-      </picker>
-      <button class="weui-btn" type="warn" bindtap="clearHistoryTagsConfirm">清空历史纪录</button>
-    </view>
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="page__hd">
+		<view class="page__title">请输入TAG</view>
+	</view>
+	<view class="page__bd">
+		<!-- <view class="weui-cells__title">请输入TAG</view> -->
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__bd">
+					<input confirm-type="done" maxlength="12" bindinput="editUserId" class="weui-input" placeholder="{{inputTag}}" />
+				</view>
+			</view>
+		</view>
+		<view class="weui-btn-area">
+			<a class="weui-btn_cell weui-btn_cell-default" bindtap="confirmUserId">确认</a>
+			<a class="weui-btn_cell weui-btn_cell-default">
+			<picker bindchange="bindPickerChange" value="{{tagIndex}}" range="{{historyTags}}">
+			历史纪录
+			</picker>
+			</a>
+			<a class="weui-btn_cell weui-btn_cell-warn" bindtap="clearHistoryTagsConfirm">清空历史纪录</a>
+		</view>
 
-    <view class="weui-footer__links guides">
-      <view class="weui-media-box__desc text-center">请注意TAG只会包含以下字符:</view>
-      <view class="weui-media-box__desc text-center">数字0, 2, 8, 9</view>
-      <view class="weui-media-box__desc text-center">字母P,Y,L,Q,G,R,J,C,U,V</view>
-      <view class="text-center">
-        <image class="text-center" mode="aspectFit" src="/resources/tag-guide.jpg"></image>
-      </view>
-    </view>
-  </view>
+		<view class="weui-footer__links guides">
+			<view class="weui-media-box__desc text-center">请注意TAG只会包含以下字符:</view>
+			<view class="weui-media-box__desc text-center">数字0, 2, 8, 9</view>
+			<view class="weui-media-box__desc text-center">字母P,Y,L,Q,G,R,J,C,U,V</view>
+			<view class="text-center">
+				<image class="text-center" mode="aspectFit" src="/resources/tag-guide.jpg"></image>
+			</view>
+		</view>
+	</view>
 </view>

@@ -9,13 +9,10 @@
     "pages/statsroyale/war/war_win_rate/war_win_rate"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarBackgroundColor": "@navBgColor"
   },
-  "navigateToMiniProgramAppIdList": [
-    "wx18a2ac992306a5a4"
-  ],
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  "themeLocation": "theme.json"
 }

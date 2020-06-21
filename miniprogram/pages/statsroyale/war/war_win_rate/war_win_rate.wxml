@@ -1,4 +1,4 @@
-<view class="page">
+<view class="page" data-weui-theme="{{theme}}">
   <view class="page__hd">
     <view class="page__title">战斗日胜率</view>
     <view class="page__desc">本页展示了部落成员在最近10场战斗日内累计的胜率排名。向高胜率的大佬低头～</view>

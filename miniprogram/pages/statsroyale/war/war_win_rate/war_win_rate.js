@@ -1,6 +1,6 @@
 // pages/statsroyale/war/war_win_rate/war_win_rate.js
 Page({
-
+  mixins: [require('../../../../themeChanged')],
   /**
    * 页面的初始数据
    */

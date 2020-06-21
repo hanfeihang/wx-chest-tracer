@@ -1,6 +1,6 @@
 // pages/statsroyale/war/war_history/war_history.js
 Page({
-
+  mixins: [require('../../../../themeChanged')],
   /**
    * 页面的初始数据
    */

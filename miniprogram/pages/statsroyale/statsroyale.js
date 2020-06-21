@@ -1,5 +1,5 @@
-var util = require('../../utils/util.js')
 Page({
+  mixins: [require('../../themeChanged')],
   /**
    * 页面的初始数据
    */
@@ -158,7 +158,7 @@ Page({
         clanId: this.data.clanId
       },
     }).then(res => {
-      console.log('refresh_clan_profile done, res:', res)
+      console.log('refresh_clan_profile done')
     }).catch(err => {
       console.log('refresh_clan_profile err:', err)
     })
@@ -222,5 +222,9 @@ Page({
         //console.info("点击图片了!")
       }
     })
+  },
+
+  changeTheme: function() {
+    getApp().themeChanged(this.data.theme === 'light' ? 'dark' : 'light');
   },
 })

@@ -1,5 +1,5 @@
 <!--statsroyale.wxml-->
-<view class="page">
+<view class="page" data-weui-theme="{{theme}}">
   <view class="page__hd">
     <view class="page__title" style="height:32px">{{username}}</view>
   </view>
@@ -26,40 +26,37 @@
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
     </view>
-    
+
     <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">
       <view wx:if="{{buttonName == 'Loading'}}" class="weui-loading"></view>
       <veiw class="weui-loadmore__tips">{{buttonName}}</veiw>
     </view>
 
     <view wx:if="{{buttonName == 'Ready'}}">
-      <view wx:if="{{chests.length != 0}}">
         <view class="weui-cells__title">宝箱序列</view>
-        <view class="weui-grids">
+        <view class="weui-grids" hover-class="none">
           <block wx:for="{{chests}}" wx:key="chestNum" wx:for-item="item">
-            <navigator class="weui-grid" hover-class="none">
-              <image class="weui-grid__icon" src="/resources/chests/{{item.chestType}}.png" />
+            <view class="weui-grid">
+              <view class="weui-grid__icon">
+                <image class="img_width" mode="widthFix" src="/resources/chests/{{item.chestType}}.png"></image>
+              </view>
               <view class="weui-grid__label">{{item.chestNum}}</view>
-            </navigator>
+            </view>
           </block>
-        </view>
       </view>
     </view>
-
     <view class="weui-footer">
       <view class="weui-footer__links">
         <navigator url="info/info" class="weui-footer__link">帮助</navigator>
         <navigator url="about/about" class="weui-footer__link">关于</navigator>
-        <view 
-          class="weui-footer__link" 
-          bindtap="previewImage" 
+        <view
+          class="weui-footer__link"
+          bindtap="previewImage"
           style="color:#FF0000">
         打赏
         </view>
       </view>
       <view class="weui-footer__text">Copyright © 2017.05 Hansoon</view>
     </view>
-
   </view>
-
 </view>

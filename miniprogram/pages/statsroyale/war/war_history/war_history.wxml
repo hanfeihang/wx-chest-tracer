@@ -1,5 +1,5 @@
 <!--pages/statsroyale/war/war_history/war_history.wxml-->
-<view class="page">
+<view class="page" data-weui-theme="{{theme}}">
   <view class="page__hd">
     <view class="page__title">偷懒名单</view>
     <view class="page__desc">本页展示了【参与集卡日，但未参与战斗日】的成员名单，方便部落管理员进行管理。请友善的对待每一个部落成员:)</view>

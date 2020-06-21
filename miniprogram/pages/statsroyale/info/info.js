@@ -1,6 +1,6 @@
 // info.js
 Page({
-
+  mixins: [require('../../../themeChanged')],
   /**
    * 页面的初始数据
    */

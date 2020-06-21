@@ -1,7 +1,4 @@
 /* statsroyale.wxss */
-.clan__playerLevel {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-    line-height: 30px;
+.img_width {
+    width: 100%;
 }
