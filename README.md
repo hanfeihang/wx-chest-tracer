@@ -1,6 +1,6 @@
 # wx-chest-tracer
 
-[English](./README.md)
+[English](./README_EN.md)
 
 ### 简介
 
