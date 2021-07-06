@@ -17,14 +17,14 @@
           {{timeLastUpdate}}
         </view>
       </view>
-      <navigator wx:if="{{clanName != null}}" url="war/war" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <!-- <navigator wx:if="{{clanName != null}}" url="war/war" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">部落信息</view>
         <view class="weui-cell__ft weui-cell__ft_in-access">{{clanName}}</view>
       </navigator>
       <navigator wx:if="{{clanName != null}}" url="war/war_win_rate/war_win_rate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">部落战胜率</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
+      </navigator> -->
     </view>
 
     <view wx:if="{{buttonName != 'Ready'}}" class="weui-loadmore">

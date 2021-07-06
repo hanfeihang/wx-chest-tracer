@@ -9,6 +9,12 @@
 			<view class="weui-panel__hd">更新历史</view>
 			<view class="weui-panel__bd">
 				<view class="weui-media-box weui-media-box_text">
+					<view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.7.0</view>
+					<view class="weui-media-box__desc display-inline-half">2021.07.06</view>
+					<view class="weui-media-box__desc">1.修复宝箱序列显示异常的问题</view>
+					<view class="weui-media-box__desc">2.移除老版本部落战信息的展示</view>
+				</view>
+				<view class="weui-media-box weui-media-box_text">
 					<view class="weui-media-box__title weui-media-box__title_in-text display-inline-half">v1.6.0</view>
 					<view class="weui-media-box__desc display-inline-half">2020.06.20</view>
 					<view class="weui-media-box__desc">1.支持深色模式</view>

@@ -56,7 +56,7 @@ loadProfile = (tag) => {
 }
 
 showUpcomingChests = (html) => {
-  var reg = /<span class="chests__counter">(.*?)<\/span>\n.*?chests__tooltip">\n(.*?)\n/gm;
+  var reg = /<span class="chests__counter">(.*?)<\/span>\n.*?chests__tooltip">\n([\s\S]*?)<\/div>/gm;
   var r;
   var chestdata = [];
   while (r = reg.exec(html)) {
@@ -110,12 +110,16 @@ showClan = (html) => {
   let clanId = null
   let clanName = null
   try {
-    var reg = /clan\/(.*?)" class="ui__link ui__mediumText ui__whiteText profileHeader__userClan"/gm;
+    var reg = /clan\/(.*?)' class="ui__link ui__mediumText ui__whiteText profileHeader__userClan"/gm;
     var r = reg.exec(html)
-    clanId = r[1].trim()
+    if (r != null) {
+      clanId = r[1].trim()
+    }
     var reg2 = /class="profileHeader__clanBadge" \/>\n(.*?)\n/gm;
     var r2 = reg2.exec(html)
-    clanName = r2[1].trim()
+    if (r2 != null) {
+      clanName = r2[1].trim()
+    }
   } catch (e) {
     console.log('no clan information' + e)
   }
